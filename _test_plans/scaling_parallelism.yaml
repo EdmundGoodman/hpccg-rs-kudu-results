@@ -95,7 +95,7 @@ benches:
       number: 5
       highest_discard: 1
       unaggregatable_metrics:
-        - "Mesh z size"
+        - "Mesh x size"
         - "Total FLOPs"
         - "Parallelisation degree"
     matrix:
@@ -111,7 +111,7 @@ benches:
         - { "OMP_NUM_THREADS": 32, "RAYON_NUM_THREADS": 32 }
     analysis:
       metrics:
-        "Mesh z size": "nz: (\\d+)"
+        "Mesh x size": "nx: (\\d+)"
         "Wall time (s)": "real\\s([\\d\\.]+)\nuser"
         "Total time (s)": "Time Summary:[\\s\\S]*Total\\s*: ([\\d\\.]+)[\\s\\S]*\nFLOPS Summary"
         "Total FLOPs": "FLOPS Summary:[\\s\\S]*Total\\s*: ([\\d\\.eE\\-+]+)[\\s\\S]*\nMFLOPS Summary"
@@ -121,6 +121,13 @@ benches:
         - title: "Multi-threaded Weak Scaling Plot"
           x: "Parallelisation degree"
           y: "Wall time (s)"
+          fix_metrics:
+            "Mesh x size": 64
+        - title: "Multi-threaded Weak Scaling Plot"
+          x: "Parallelisation degree"
+          y: "Wall time (s)"
+          fix_metrics:
+            "Mesh x size": 200
 
 
 
@@ -146,6 +153,7 @@ benches:
         - ["64 64 64", { "ntasks": 16, "nodes": 2 }]
     analysis:
       metrics:
+        "Mesh z size": "nz: (\\d+)"
         "Wall time (s)": "real\\s([\\d\\.]+)\nuser"
         "Total time (s)": "Time Summary:[\\s\\S]*Total\\s*: ([\\d\\.]+)[\\s\\S]*\nFLOPS Summary"
         "Total FLOPs": "FLOPS Summary:[\\s\\S]*Total\\s*: ([\\d\\.eE\\-+]+)[\\s\\S]*\nMFLOPS Summary"
@@ -166,7 +174,7 @@ benches:
       number: 5
       highest_discard: 1
       unaggregatable_metrics:
-        - "Mesh z size"
+        - "Mesh x size"
         - "Total FLOPs"
         - "MPI Ranks"
         - "MPI Nodes"
@@ -182,6 +190,7 @@ benches:
         - { "ntasks": 16, "nodes": 2 }
     analysis:
       metrics:
+        "Mesh x size": "nx: (\\d+)"
         "Wall time (s)": "real\\s([\\d\\.]+)\nuser"
         "Total time (s)": "Time Summary:[\\s\\S]*Total\\s*: ([\\d\\.]+)[\\s\\S]*\nFLOPS Summary"
         "Total FLOPs": "FLOPS Summary:[\\s\\S]*Total\\s*: ([\\d\\.eE\\-+]+)[\\s\\S]*\nMFLOPS Summary"
