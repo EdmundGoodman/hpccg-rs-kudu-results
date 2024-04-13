@@ -1,0 +1,106 @@
+===== CONFIGURATION =====
+=== CPU ARCHITECTURE ===
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              40
+On-line CPU(s) list: 0-39
+Thread(s) per core:  2
+Core(s) per socket:  10
+Socket(s):           2
+NUMA node(s):        2
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               63
+Model name:          Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+Stepping:            2
+CPU MHz:             3300.000
+CPU max MHz:         3300.0000
+CPU min MHz:         1200.0000
+BogoMIPS:            5200.29
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            25600K
+NUMA node0 CPU(s):   0-9,20-29
+NUMA node1 CPU(s):   10-19,30-39
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti intel_ppin ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm xsaveopt cqm_llc cqm_occup_llc dtherm ida arat pln pts md_clear flush_l1d
+=== SLURM CONFIG ===
+JobId=902306 JobName=rust-rayonjub621v4.sbatch
+   UserId=u2006527(38259) GroupId=dcsugrad(301) MCS_label=N/A
+   Priority=4294686952 Nice=0 Account=ug QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:01 TimeLimit=2-00:00:00 TimeMin=N/A
+   SubmitTime=2024-04-13T00:40:52 EligibleTime=2024-04-13T07:06:12
+   AccrueTime=2024-04-13T07:06:12
+   StartTime=2024-04-13T07:33:49 EndTime=2024-04-15T07:33:49 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-04-13T07:33:49
+   Partition=cpu-batch AllocNode:Sid=kudu:1504429
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=emu-40
+   BatchHost=emu-40
+   NumNodes=1 NumCPUs=32 NumTasks=1 CPUs/Task=32 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=32,mem=60000M,node=1,billing=32
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=*
+   MinCPUsNode=32 MinMemoryNode=60000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=MCS Contiguous=0 Licenses=(null) Network=(null)
+   Command=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench/rust-rayonjub621v4.sbatch
+   WorkDir=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench
+   StdErr=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench/results/cpp-kokkos-rust-parallel/rust-rayon__902306.out
+   StdIn=/dev/null
+   StdOut=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench/results/cpp-kokkos-rust-parallel/rust-rayon__902306.out
+   Power=
+   NtasksPerTRES:0
+
+=== RUN INSTANTIATION ===
+{args: 400 400 400}
+
+===== BUILD =====
+run configuration was pre-built
+
+===== RUN =====
+Initial Residual = +1.26219e4
+Iteration = 15 , Residual = +1.62655e2
+Iteration = 30 , Residual = +1.11063e0
+Iteration = 45 , Residual = +7.63443e-3
+Iteration = 60 , Residual = +5.24604e-5
+Iteration = 75 , Residual = +3.60317e-7
+Iteration = 90 , Residual = +2.47326e-9
+Iteration = 105 , Residual = +1.69623e-11
+Iteration = 120 , Residual = +1.16191e-13
+Iteration = 135 , Residual = +7.94406e-16
+Iteration = 149 , Residual = +7.55160e-18
+Mini-Application Name: hpccg-parallel
+Mini-Application Version: 1.0
+Parallelism:
+  MPI not enabled:
+  Rayon enabled
+Dimensions:
+  nx: 400
+  ny: 400
+  nz: 400
+Number of iterations: 149
+Final residual: 7.55160e-18
+#********** Performance Summary (times in sec) ***********
+Time Summary:
+  Total: 2395.9508
+  DDOT: 103.2227
+  WAXPBY: 303.3769
+  SPARSEMV: 1989.1213
+FLOPS Summary:
+  Total: 610304000000
+  DDOT: 38144000000
+  WAXPBY: 57216000000
+  SPARSEMV: 514944000000
+MFLOPS Summary:
+  Total: 254.7231
+  DDOT: 369.5310
+  WAXPBY: 188.5971
+  SPARSEMV: 258.8801
+Difference between computed and exact = 5.10703e-15.
+real 96.78
+user 2402.38
+sys 184.80

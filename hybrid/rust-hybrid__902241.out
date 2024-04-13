@@ -1,0 +1,146 @@
+===== CONFIGURATION =====
+=== MODULE LOADS ===
+Loading cs402-mpi
+  Loading requirement: gcc9
+=== ENVIRONMENT VARIABLES ===
+OMP_NUM_THREADS=32
+RAYON_NUM_THREADS=32
+=== CPU ARCHITECTURE ===
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              40
+On-line CPU(s) list: 0-39
+Thread(s) per core:  2
+Core(s) per socket:  10
+Socket(s):           2
+NUMA node(s):        2
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               63
+Model name:          Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+Stepping:            2
+CPU MHz:             3300.000
+CPU max MHz:         3300.0000
+CPU min MHz:         1200.0000
+BogoMIPS:            5200.34
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            25600K
+NUMA node0 CPU(s):   0-9,20-29
+NUMA node1 CPU(s):   10-19,30-39
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti intel_ppin ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm xsaveopt cqm_llc cqm_occup_llc dtherm ida arat pln pts md_clear flush_l1d
+=== SLURM CONFIG ===
+JobId=902241 JobName=rust-hybrid351rnwkf.sbatch
+   UserId=u2006527(38259) GroupId=dcsugrad(301) MCS_label=N/A
+   Priority=4294687017 Nice=0 Account=ug QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=2-00:00:00 TimeMin=N/A
+   SubmitTime=2024-04-13T00:40:50 EligibleTime=2024-04-13T08:42:45
+   AccrueTime=2024-04-13T08:42:45
+   StartTime=2024-04-13T08:54:57 EndTime=2024-04-15T08:54:57 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-04-13T08:54:57
+   Partition=cpu-batch AllocNode:Sid=kudu:1504429
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=emu-[33-36]
+   BatchHost=emu-33
+   NumNodes=4 NumCPUs=128 NumTasks=4 CPUs/Task=32 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=128,mem=240000M,node=4,billing=128
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=*
+   MinCPUsNode=32 MinMemoryNode=60000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=MCS Contiguous=0 Licenses=(null) Network=(null)
+   Command=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench/rust-hybrid351rnwkf.sbatch
+   WorkDir=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench
+   StdErr=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench/results/hybrid/rust-hybrid__902241.out
+   StdIn=/dev/null
+   StdOut=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench/results/hybrid/rust-hybrid__902241.out
+   Power=
+   NtasksPerTRES:0
+
+=== RUN INSTANTIATION ===
+{args: 300 300 300, sbatch_config: {nodes: 4, ntasks-per-node: 1, cpus-per-task: 32}, environment_variables: {OMP_NUM_THREADS: 32, RAYON_NUM_THREADS: 32}}
+
+===== BUILD =====
+run configuration was pre-built
+
+===== RUN =====
+--------------------------------------------------------------------------
+WARNING: There is at least non-excluded one OpenFabrics device found,
+but there are no active ports detected (or Open MPI was unable to use
+them).  This is most certainly not what you wanted.  Check your
+cables, subnet manager configuration, etc.  The openib BTL will be
+ignored for this job.
+
+  Local host: emu-36
+--------------------------------------------------------------------------
+thread 'main' panicked at src/hpccg/make_local_matrix.rs:107:25:
+Must increase `MAX_EXTERNAL` from 100000
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[emu-35:244992] *** Process received signal ***
+[emu-35:244992] Signal: Aborted (6)
+[emu-35:244992] Signal code:  (-6)
+[emu-35:244992] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x7f1ded992cf0]
+[emu-35:244992] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7f1ded405acf]
+[emu-35:244992] [ 2] /lib64/libc.so.6(abort+0x127)[0x7f1ded3d8ea5]
+[emu-35:244992] [ 3] ./target/release/hpccg-rs(+0x2abd7)[0x55c0f2ec8bd7]
+[emu-35:244992] [ 4] ./target/release/hpccg-rs(+0x2abc6)[0x55c0f2ec8bc6]
+[emu-35:244992] [ 5] ./target/release/hpccg-rs(+0x66c36)[0x55c0f2f04c36]
+[emu-35:244992] [ 6] ./target/release/hpccg-rs(+0x69253)[0x55c0f2f07253]
+[emu-35:244992] [ 7] ./target/release/hpccg-rs(+0x68f7c)[0x55c0f2f06f7c]
+[emu-35:244992] [ 8] ./target/release/hpccg-rs(+0x68ed6)[0x55c0f2f06ed6]
+[emu-35:244992] [ 9] ./target/release/hpccg-rs(+0x68ec1)[0x55c0f2f06ec1]
+[emu-35:244992] [10] ./target/release/hpccg-rs(+0x8604)[0x55c0f2ea6604]
+[emu-35:244992] [11] ./target/release/hpccg-rs(+0x16930)[0x55c0f2eb4930]
+[emu-35:244992] [12] ./target/release/hpccg-rs(+0x182cd)[0x55c0f2eb62cd]
+[emu-35:244992] [13] ./target/release/hpccg-rs(+0xe763)[0x55c0f2eac763]
+[emu-35:244992] [14] ./target/release/hpccg-rs(+0xe799)[0x55c0f2eac799]
+[emu-35:244992] [15] ./target/release/hpccg-rs(+0x3723e)[0x55c0f2ed523e]
+[emu-35:244992] [16] ./target/release/hpccg-rs(+0xe784)[0x55c0f2eac784]
+[emu-35:244992] [17] /lib64/libc.so.6(__libc_start_main+0xe5)[0x7f1ded3f1d85]
+[emu-35:244992] [18] ./target/release/hpccg-rs(+0xcf9e)[0x55c0f2eaaf9e]
+[emu-35:244992] *** End of error message ***
+thread 'main' panicked at src/hpccg/make_local_matrix.rs:107:25:
+Must increase `MAX_EXTERNAL` from 100000
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[emu-34:130692] *** Process received signal ***
+[emu-34:130692] Signal: Aborted (6)
+[emu-34:130692] Signal code:  (-6)
+[emu-34:130692] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x7f90ca31ccf0]
+[emu-34:130692] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7f90c9d8facf]
+[emu-34:130692] [ 2] /lib64/libc.so.6(abort+0x127)[0x7f90c9d62ea5]
+[emu-34:130692] [ 3] ./target/release/hpccg-rs(+0x2abd7)[0x563801e87bd7]
+[emu-34:130692] [ 4] ./target/release/hpccg-rs(+0x2abc6)[0x563801e87bc6]
+[emu-34:130692] [ 5] ./target/release/hpccg-rs(+0x66c36)[0x563801ec3c36]
+[emu-34:130692] [ 6] ./target/release/hpccg-rs(+0x69253)[0x563801ec6253]
+[emu-34:130692] [ 7] ./target/release/hpccg-rs(+0x68f7c)[0x563801ec5f7c]
+[emu-34:130692] [ 8] ./target/release/hpccg-rs(+0x68ed6)[0x563801ec5ed6]
+[emu-34:130692] [ 9] ./target/release/hpccg-rs(+0x68ec1)[0x563801ec5ec1]
+[emu-34:130692] [10] ./target/release/hpccg-rs(+0x8604)[0x563801e65604]
+[emu-34:130692] [11] ./target/release/hpccg-rs(+0x16930)[0x563801e73930]
+[emu-34:130692] [12] ./target/release/hpccg-rs(+0x182cd)[0x563801e752cd]
+[emu-34:130692] [13] ./target/release/hpccg-rs(+0xe763)[0x563801e6b763]
+[emu-34:130692] [14] ./target/release/hpccg-rs(+0xe799)[0x563801e6b799]
+[emu-34:130692] [15] ./target/release/hpccg-rs(+0x3723e)[0x563801e9423e]
+[emu-34:130692] [16] ./target/release/hpccg-rs(+0xe784)[0x563801e6b784]
+[emu-34:130692] [17] /lib64/libc.so.6(__libc_start_main+0xe5)[0x7f90c9d7bd85]
+[emu-34:130692] [18] ./target/release/hpccg-rs(+0xcf9e)[0x563801e69f9e]
+[emu-34:130692] *** End of error message ***
+[emu-33:414668] 3 more processes have sent help message help-mpi-btl-openib.txt / no active ports found
+[emu-33:414668] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[emu-36][[52879,1],3][../../../../../opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(16) failed: Connection reset by peer (104)
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+[emu-33][[52879,1],0][../../../../../opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(16) failed: Connection reset by peer (104)
+--------------------------------------------------------------------------
+mpirun noticed that process rank 2 with PID 244992 on node emu-35 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+2 total processes killed (some possibly by mpirun during cleanup)
+real 8.51
+user 4.32
+sys 1.86

@@ -1,0 +1,161 @@
+===== CONFIGURATION =====
+=== MODULE LOADS ===
+Loading cs402-mpi
+  Loading requirement: gcc9
+=== CPU ARCHITECTURE ===
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              40
+On-line CPU(s) list: 0-39
+Thread(s) per core:  2
+Core(s) per socket:  10
+Socket(s):           2
+NUMA node(s):        2
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               63
+Model name:          Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+Stepping:            2
+CPU MHz:             3131.283
+CPU max MHz:         3300.0000
+CPU min MHz:         1200.0000
+BogoMIPS:            5200.20
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            25600K
+NUMA node0 CPU(s):   0-9,20-29
+NUMA node1 CPU(s):   10-19,30-39
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti intel_ppin ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm xsaveopt cqm_llc cqm_occup_llc dtherm ida arat pln pts md_clear flush_l1d
+=== SLURM CONFIG ===
+JobId=902095 JobName=cpp-mpimx0cn_6f.sbatch
+   UserId=u2006527(38259) GroupId=dcsugrad(301) MCS_label=N/A
+   Priority=4294687163 Nice=0 Account=ug QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:01 TimeLimit=2-00:00:00 TimeMin=N/A
+   SubmitTime=2024-04-13T00:40:46 EligibleTime=2024-04-13T06:46:00
+   AccrueTime=2024-04-13T06:46:00
+   StartTime=2024-04-13T07:23:47 EndTime=2024-04-15T07:23:47 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-04-13T07:23:47
+   Partition=cpu-batch AllocNode:Sid=kudu:1504429
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=emu-[34-36,39]
+   BatchHost=emu-34
+   NumNodes=4 NumCPUs=16 NumTasks=8 CPUs/Task=2 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=16,mem=240000M,node=4,billing=16
+   Socks/Node=* NtasksPerN:B:S:C=2:0:*:* CoreSpec=*
+   MinCPUsNode=4 MinMemoryNode=60000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=MCS Contiguous=0 Licenses=(null) Network=(null)
+   Command=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench/cpp-mpimx0cn_6f.sbatch
+   WorkDir=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench
+   StdErr=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench/results/mpi/cpp-mpi__902095.out
+   StdIn=/dev/null
+   StdOut=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench/results/mpi/cpp-mpi__902095.out
+   Power=
+   NtasksPerTRES:0
+
+=== RUN INSTANTIATION ===
+{args: 300 300 300, sbatch_config: {nodes: 2, ntasks-per-node: 2}}
+
+===== BUILD =====
+run configuration was pre-built
+
+===== RUN =====
+--------------------------------------------------------------------------
+WARNING: There is at least non-excluded one OpenFabrics device found,
+but there are no active ports detected (or Open MPI was unable to use
+them).  This is most certainly not what you wanted.  Check your
+cables, subnet manager configuration, etc.  The openib BTL will be
+ignored for this job.
+
+  Local host: emu-39
+--------------------------------------------------------------------------
+Must increase max_external in HPC_Sparse_Matrix.hpp
+[emu-34:124175] *** Process received signal ***
+[emu-34:124175] Signal: Aborted (6)
+[emu-34:124175] Signal code:  (-6)
+[emu-34:124175] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x7f67bfe26cf0]
+[emu-34:124175] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7f67bfa9dacf]
+[emu-34:124175] [ 2] /lib64/libc.so.6(abort+0x127)[0x7f67bfa70ea5]
+[emu-34:124175] [ 3] ./test_HPCCG[0x4079ac]
+[emu-34:124175] [ 4] ./test_HPCCG[0x403de7]
+[emu-34:124175] [ 5] /lib64/libc.so.6(__libc_start_main+0xe5)[0x7f67bfa89d85]
+[emu-34:124175] [ 6] ./test_HPCCG[0x4058ae]
+[emu-34:124175] *** End of error message ***
+Must increase max_external in HPC_Sparse_Matrix.hpp
+[emu-35:238422] *** Process received signal ***
+[emu-35:238422] Signal: Aborted (6)
+[emu-35:238422] Signal code:  (-6)
+[emu-35:238422] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x7f7f18d45cf0]
+[emu-35:238422] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7f7f189bcacf]
+[emu-35:238422] [ 2] /lib64/libc.so.6(abort+0x127)[0x7f7f1898fea5]
+[emu-35:238422] [ 3] ./test_HPCCG[0x4079ac]
+[emu-35:238422] [ 4] ./test_HPCCG[0x403de7]
+[emu-35:238422] [ 5] /lib64/libc.so.6(__libc_start_main+0xe5)[0x7f7f189a8d85]
+[emu-35:238422] [ 6] ./test_HPCCG[0x4058ae]
+[emu-35:238422] *** End of error message ***
+Must increase max_external in HPC_Sparse_Matrix.hpp
+[emu-36:168650] *** Process received signal ***
+[emu-36:168650] Signal: Aborted (6)
+[emu-36:168650] Signal code:  (-6)
+[emu-36:168650] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x7eff0207ccf0]
+[emu-36:168650] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7eff01cf3acf]
+[emu-36:168650] [ 2] /lib64/libc.so.6(abort+0x127)[0x7eff01cc6ea5]
+[emu-36:168650] [ 3] ./test_HPCCG[0x4079ac]
+[emu-36:168650] [ 4] ./test_HPCCG[0x403de7]
+[emu-36:168650] [ 5] /lib64/libc.so.6(__libc_start_main+0xe5)[0x7eff01cdfd85]
+[emu-36:168650] [ 6] ./test_HPCCG[0x4058ae]
+[emu-36:168650] *** End of error message ***
+Must increase max_external in HPC_Sparse_Matrix.hpp
+[emu-35:238421] *** Process received signal ***
+[emu-35:238421] Signal: Aborted (6)
+[emu-35:238421] Signal code:  (-6)
+[emu-35:238421] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x7ffbf2930cf0]
+[emu-35:238421] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7ffbf25a7acf]
+[emu-35:238421] [ 2] /lib64/libc.so.6(abort+0x127)[0x7ffbf257aea5]
+[emu-35:238421] [ 3] ./test_HPCCG[0x4079ac]
+[emu-35:238421] [ 4] ./test_HPCCG[0x403de7]
+[emu-35:238421] [ 5] /lib64/libc.so.6(__libc_start_main+0xe5)[0x7ffbf2593d85]
+[emu-35:238421] [ 6] ./test_HPCCG[0x4058ae]
+[emu-35:238421] *** End of error message ***
+Must increase max_external in HPC_Sparse_Matrix.hpp
+[emu-39:222752] *** Process received signal ***
+[emu-39:222752] Signal: Aborted (6)
+[emu-39:222752] Signal code:  (-6)
+[emu-39:222752] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x7fa057d83cf0]
+[emu-39:222752] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7fa0579faacf]
+[emu-39:222752] [ 2] /lib64/libc.so.6(abort+0x127)[0x7fa0579cdea5]
+[emu-39:222752] [ 3] ./test_HPCCG[0x4079ac]
+[emu-39:222752] [ 4] ./test_HPCCG[0x403de7]
+[emu-39:222752] [ 5] /lib64/libc.so.6(__libc_start_main+0xe5)[0x7fa0579e6d85]
+[emu-39:222752] [ 6] ./test_HPCCG[0x4058ae]
+[emu-39:222752] *** End of error message ***
+Must increase max_external in HPC_Sparse_Matrix.hpp
+[emu-36:168649] *** Process received signal ***
+[emu-36:168649] Signal: Aborted (6)
+[emu-36:168649] Signal code:  (-6)
+[emu-36:168649] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x7f4b8047dcf0]
+[emu-36:168649] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7f4b800f4acf]
+[emu-36:168649] [ 2] /lib64/libc.so.6(abort+0x127)[0x7f4b800c7ea5]
+[emu-36:168649] [ 3] ./test_HPCCG[0x4079ac]
+[emu-36:168649] [ 4] ./test_HPCCG[0x403de7]
+[emu-36:168649] [ 5] /lib64/libc.so.6(__libc_start_main+0xe5)[0x7f4b800e0d85]
+[emu-36:168649] [ 6] ./test_HPCCG[0x4058ae]
+[emu-36:168649] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+[emu-34:124162] 7 more processes have sent help message help-mpi-btl-openib.txt / no active ports found
+[emu-34:124162] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+--------------------------------------------------------------------------
+mpirun noticed that process rank 1 with PID 0 on node emu-34 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+3 total processes killed (some possibly by mpirun during cleanup)
+real 7.95
+user 6.42
+sys 3.83

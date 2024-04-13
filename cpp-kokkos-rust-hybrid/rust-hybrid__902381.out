@@ -1,0 +1,135 @@
+===== CONFIGURATION =====
+=== MODULE LOADS ===
+Loading cs402-mpi
+  Loading requirement: gcc9
+=== ENVIRONMENT VARIABLES ===
+OMP_NUM_THREADS=32
+RAYON_NUM_THREADS=32
+=== CPU ARCHITECTURE ===
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              40
+On-line CPU(s) list: 0-39
+Thread(s) per core:  2
+Core(s) per socket:  10
+Socket(s):           2
+NUMA node(s):        2
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               63
+Model name:          Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+Stepping:            2
+CPU MHz:             3300.000
+CPU max MHz:         3300.0000
+CPU min MHz:         1200.0000
+BogoMIPS:            5200.34
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            25600K
+NUMA node0 CPU(s):   0-9,20-29
+NUMA node1 CPU(s):   10-19,30-39
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti intel_ppin ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm xsaveopt cqm_llc cqm_occup_llc dtherm ida arat pln pts md_clear flush_l1d
+=== SLURM CONFIG ===
+JobId=902381 JobName=rust-hybridn3p968y6.sbatch
+   UserId=u2006527(38259) GroupId=dcsugrad(301) MCS_label=N/A
+   Priority=4294686877 Nice=0 Account=ug QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=2-00:00:00 TimeMin=N/A
+   SubmitTime=2024-04-13T00:40:54 EligibleTime=2024-04-13T09:11:12
+   AccrueTime=2024-04-13T09:11:12
+   StartTime=2024-04-13T09:18:41 EndTime=2024-04-15T09:18:41 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-04-13T09:18:41
+   Partition=cpu-batch AllocNode:Sid=kudu:1504429
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=emu-[33-36]
+   BatchHost=emu-33
+   NumNodes=4 NumCPUs=128 NumTasks=4 CPUs/Task=32 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=128,mem=240000M,node=4,billing=128
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=*
+   MinCPUsNode=32 MinMemoryNode=60000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=MCS Contiguous=0 Licenses=(null) Network=(null)
+   Command=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench/rust-hybridn3p968y6.sbatch
+   WorkDir=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench
+   StdErr=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench/results/cpp-kokkos-rust-hybrid/rust-hybrid__902381.out
+   StdIn=/dev/null
+   StdOut=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench/results/cpp-kokkos-rust-hybrid/rust-hybrid__902381.out
+   Power=
+   NtasksPerTRES:0
+
+=== RUN INSTANTIATION ===
+{args: 100 100 100, sbatch_config: {nodes: 4, ntasks-per-node: 1, cpus-per-task: 32}, environment_variables: {OMP_NUM_THREADS: 32, RAYON_NUM_THREADS: 32}}
+
+===== BUILD =====
+run configuration was pre-built
+
+===== RUN =====
+--------------------------------------------------------------------------
+WARNING: There is at least non-excluded one OpenFabrics device found,
+but there are no active ports detected (or Open MPI was unable to use
+them).  This is most certainly not what you wanted.  Check your
+cables, subnet manager configuration, etc.  The openib BTL will be
+ignored for this job.
+
+  Local host: emu-34
+--------------------------------------------------------------------------
+Initial Residual = +4.68575e3
+Iteration = 15 , Residual = +6.36217e1
+[emu-33:418705] 3 more processes have sent help message help-mpi-btl-openib.txt / no active ports found
+[emu-33:418705] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Iteration = 30 , Residual = +4.16789e-1
+Iteration = 45 , Residual = +2.56321e-3
+Iteration = 60 , Residual = +1.17629e-5
+Iteration = 75 , Residual = +7.70559e-8
+Iteration = 90 , Residual = +4.79079e-10
+Iteration = 105 , Residual = +3.23644e-12
+Iteration = 120 , Residual = +1.99887e-14
+Iteration = 135 , Residual = +1.25928e-16
+Iteration = 149 , Residual = +1.20695e-18
+Mini-Application Name: hpccg
+Mini-Application Version: 1.0
+Parallelism:
+  Number of MPI ranks: 4
+  Rayon disabled
+Dimensions:
+  nx: 100
+  ny: 100
+  nz: 100
+Number of iterations: 149
+Final residual: 1.20695e-18
+#********** Performance Summary (times in sec) ***********
+Time Summary:
+  Total: 34.8143
+  DDOT: 11.2438
+  WAXPBY: 12.3852
+  SPARSEMV: 10.3741
+FLOPS Summary:
+  Total: 38144000000
+  DDOT: 2384000000
+  WAXPBY: 3576000000
+  SPARSEMV: 32184000000
+MFLOPS Summary:
+  Total: 1095.6422
+  DDOT: 212.0272
+  WAXPBY: 288.7319
+  SPARSEMV: 3102.3522
+DDOT Timing Variations:
+  Min DDOT MPI_Allreduce time: 3.0932
+  Max DDOT MPI_Allreduce time: 4.0788
+  Avg DDOT MPI_Allreduce time: 14.7022
+SPARSEMV OVERHEADS:
+  SPARSEMV MFLOPS W OVERHEAD: 710.7978
+  SPARSEMV PARALLEL OVERHEAD Time: 34.9046
+  SPARSEMV PARALLEL OVERHEAD Pct: 77.0884
+  SPARSEMV PARALLEL OVERHEAD Setup Time: 0.0696
+  SPARSEMV PARALLEL OVERHEAD Setup Pct: 0.1536
+  SPARSEMV PARALLEL OVERHEAD Bdry Exch Time: 34.8351
+  SPARSEMV PARALLEL OVERHEAD Bdry Exch Pct: 76.9348
+Difference between computed and exact = 4.66294e-15.
+real 31.66
+user 35.06
+sys 18.36
