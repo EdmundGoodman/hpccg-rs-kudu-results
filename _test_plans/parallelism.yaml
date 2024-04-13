@@ -145,7 +145,6 @@ run_configurations:
 
 benches:
   "serial":
-    enabled: False
     run_configurations:
       - "cpp-reference"
       - "rust-reference"
@@ -165,13 +164,22 @@ benches:
       metrics:
         "Mesh x size": "nx: (\\d+)"
         "Wall time (s)": "real\\s([\\d\\.]+)\nuser"
+      derived_metrics:
+        "Execution time relative to C++": "float(metrics['Wall time (s)']) / float(_corresponding_metrics['cpp-reference']['Wall time (s)'])"
       line_plots:
         - title: "Serial Implementation Comparison"
           x: "Mesh x size"
           y: "Wall time (s)"
+        - title: "Serial Implementation Relative Execution Times"
+          x: "Mesh x size"
+          y: "Execution time relative to C++"
+      bar_charts:
+        - title: "Serial Implementation Comparison"
+          y: "Wall time (s)"
+          split_metrics:
+            - "Mesh x size"
 
   "multi-threaded":
-    enabled: False
     run_configurations:
       - "cpp-openmp"
       - "rust-rayon"
@@ -196,6 +204,8 @@ benches:
         "Mesh x size": "nx: (\\d+)"
         "Num threads": "=== RUN INSTANTIATION ===\n\\{.*environment_variables: \\{.*OMP_NUM_THREADS: (\\d+),.*\\}"
         "Wall time (s)": "real\\s([\\d\\.]+)\nuser"
+      derived_metrics:
+        "Execution time relative to C++": "float(metrics['Wall time (s)']) / float(_corresponding_metrics['cpp-openmp']['Wall time (s)'])"
       line_plots:
         - title: "Multi-Threaded Implementation Comparison"
           x: "Mesh x size"
@@ -205,10 +215,13 @@ benches:
         - title: "Multi-Threaded Implementation Comparison"
           x: "Mesh x size"
           y: "Wall time (s)"
-          split_metrics:
-            - "Num threads"
           fix_metrics:
             "Num threads": 32
+        - title: "Multi-Threaded Implementation Relative Execution Times"
+          x: "Mesh x size"
+          y: "Execution time relative to C++"
+          split_metrics:
+            - "Num threads"
       bar_charts:
         - title: "Multi-Threaded Implementation Comparison"
           y: "Wall time (s)"
@@ -246,10 +259,18 @@ benches:
         "Nodes": "=== RUN INSTANTIATION ===\n\\{.*sbatch_config: \\{.*nodes: (\\d+).*\\}"
         "Tasks per Node": "=== RUN INSTANTIATION ===\n\\{.*sbatch_config: \\{.*ntasks-per-node: (\\d+).*\\}"
         "Wall time (s)": "real\\s([\\d\\.]+)\nuser"
+      derived_metrics:
+        "Execution time relative to C++": "float(metrics['Wall time (s)']) / float(_corresponding_metrics['cpp-mpi']['Wall time (s)'])"
       line_plots:
         - title: "MPI Implementation Comparison"
           x: "Mesh x size"
           y: "Wall time (s)"
+          split_metrics:
+            - "Nodes"
+            - "Tasks per Node"
+        - title: "MPI Implementation Relative Execution Times"
+          x: "Mesh x size"
+          y: "Execution time relative to C++"
           split_metrics:
             - "Nodes"
             - "Tasks per Node"
@@ -286,10 +307,19 @@ benches:
         "Tasks per Node": "=== RUN INSTANTIATION ===\n\\{.*sbatch_config: \\{.*ntasks-per-node: (\\d+).*\\}"
         "Threads": "=== RUN INSTANTIATION ===\n\\{.*sbatch_config: \\{.*cpus-per-task: (\\d+).*\\}"
         "Wall time (s)": "real\\s([\\d\\.]+)\nuser"
+      derived_metrics:
+        "Execution time relative to C++": "float(metrics['Wall time (s)']) / float(_corresponding_metrics['cpp-hybrid']['Wall time (s)'])"
       line_plots:
         - title: "MPI & Multi-Threading Implementation Comparison"
           x: "Mesh x size"
           y: "Wall time (s)"
+          split_metrics:
+            - "Nodes"
+            - "Tasks per Node"
+            - "Threads"
+        - title: "MPI & Multi-Threading Implementation Relative Execution Times"
+          x: "Mesh x size"
+          y: "Execution time relative to C++"
           split_metrics:
             - "Nodes"
             - "Tasks per Node"
@@ -319,10 +349,15 @@ benches:
       metrics:
         "Mesh x size": "nx: (\\d+)"
         "Wall time (s)": "real\\s([\\d\\.]+)\nuser"
+      derived_metrics:
+        "Execution time relative to C++": "float(metrics['Wall time (s)']) / float(_corresponding_metrics['cpp-openmp']['Wall time (s)'])"
       line_plots:
         - title: "C++, Kokkos, and Rust with Multi-Threading Version Comparison"
           x: "Mesh x size"
           y: "Wall time (s)"
+        - title: "C++, Kokkos, and Rust with Multi-Threading Relative Execution Times"
+          x: "Mesh x size"
+          y: "Execution time relative to C++"
       bar_charts:
         - title: "C++, Kokkos, and Rust with Multi-Threading Version Comparison"
           y: "Wall time (s)"
@@ -356,10 +391,15 @@ benches:
       metrics:
         "Mesh x size": "nx: (\\d+)"
         "Wall time (s)": "real\\s([\\d\\.]+)\nuser"
+      derived_metrics:
+        "Execution time relative to C++": "float(metrics['Wall time (s)']) / float(_corresponding_metrics['cpp-hybrid']['Wall time (s)'])"
       line_plots:
         - title: "C++, Kokkos, and Rust with MPI & Multi-Threading Version Comparison"
           x: "Mesh x size"
           y: "Wall time (s)"
+        - title: "C++, Kokkos, and Rust with MPI & Multi-Threading Relative Execution Times"
+          x: "Mesh x size"
+          y: "Execution time relative to C++"
       bar_charts:
         - title: "C++, Kokkos, and Rust with MPI & Multi-Threading Version Comparison"
           y: "Wall time (s)"
