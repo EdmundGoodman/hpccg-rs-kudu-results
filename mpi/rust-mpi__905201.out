@@ -1,0 +1,233 @@
+===== CONFIGURATION =====
+=== MODULE LOADS ===
+Loading cs402-mpi
+  Loading requirement: gcc9
+=== CPU ARCHITECTURE ===
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              40
+On-line CPU(s) list: 0-39
+Thread(s) per core:  2
+Core(s) per socket:  10
+Socket(s):           2
+NUMA node(s):        2
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               63
+Model name:          Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+Stepping:            2
+CPU MHz:             3300.000
+CPU max MHz:         3300.0000
+CPU min MHz:         1200.0000
+BogoMIPS:            5200.12
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            25600K
+NUMA node0 CPU(s):   0-9,20-29
+NUMA node1 CPU(s):   10-19,30-39
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti intel_ppin ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm xsaveopt cqm_llc cqm_occup_llc dtherm ida arat pln pts md_clear flush_l1d
+=== SLURM CONFIG ===
+JobId=905201 JobName=rust-mpi9b7mjzmm.sbatch
+   UserId=u2006527(38259) GroupId=dcsugrad(301) MCS_label=N/A
+   Priority=4294686080 Nice=0 Account=ug QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:01 TimeLimit=2-00:00:00 TimeMin=N/A
+   SubmitTime=2024-04-13T21:11:06 EligibleTime=2024-04-13T21:56:01
+   AccrueTime=2024-04-13T21:56:01
+   StartTime=2024-04-13T22:42:43 EndTime=2024-04-15T22:42:43 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-04-13T22:42:43
+   Partition=cpu-batch AllocNode:Sid=kudu:1724362
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=emu-[38-41]
+   BatchHost=emu-38
+   NumNodes=4 NumCPUs=16 NumTasks=8 CPUs/Task=2 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=16,mem=240000M,node=4,billing=16
+   Socks/Node=* NtasksPerN:B:S:C=2:0:*:* CoreSpec=*
+   MinCPUsNode=4 MinMemoryNode=60000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=MCS Contiguous=0 Licenses=(null) Network=(null)
+   Command=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench/rust-mpi9b7mjzmm.sbatch
+   WorkDir=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench
+   StdErr=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench/results/mpi/rust-mpi__905201.out
+   StdIn=/dev/null
+   StdOut=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench/results/mpi/rust-mpi__905201.out
+   Power=
+   NtasksPerTRES:0
+
+=== RUN INSTANTIATION ===
+{args: 250 250 250, sbatch_config: {nodes: 4, ntasks-per-node: 2}}
+
+===== BUILD =====
+run configuration was pre-built
+
+===== RUN =====
+--------------------------------------------------------------------------
+WARNING: There is at least non-excluded one OpenFabrics device found,
+but there are no active ports detected (or Open MPI was unable to use
+them).  This is most certainly not what you wanted.  Check your
+cables, subnet manager configuration, etc.  The openib BTL will be
+ignored for this job.
+
+  Local host: emu-41
+--------------------------------------------------------------------------
+thread 'main' panicked at src/hpccg/make_local_matrix.rs:107:25:
+Must increase `MAX_EXTERNAL` from 100000
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[emu-38:481056] *** Process received signal ***
+[emu-38:481056] Signal: Aborted (6)
+[emu-38:481056] Signal code:  (-6)
+[emu-38:481056] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x7f4c943edcf0]
+[emu-38:481056] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7f4c94064acf]
+[emu-38:481056] [ 2] /lib64/libc.so.6(abort+0x127)[0x7f4c94037ea5]
+[emu-38:481056] [ 3] ./target/release/hpccg-rs(+0x22cc7)[0x56154e1c3cc7]
+[emu-38:481056] [ 4] ./target/release/hpccg-rs(+0x22cb6)[0x56154e1c3cb6]
+[emu-38:481056] [ 5] ./target/release/hpccg-rs(+0x55c66)[0x56154e1f6c66]
+[emu-38:481056] [ 6] ./target/release/hpccg-rs(+0x57d29)[0x56154e1f8d29]
+[emu-38:481056] [ 7] ./target/release/hpccg-rs(+0x57a5c)[0x56154e1f8a5c]
+[emu-38:481056] [ 8] ./target/release/hpccg-rs(+0x579b6)[0x56154e1f89b6]
+[emu-38:481056] [ 9] ./target/release/hpccg-rs(+0x579a1)[0x56154e1f89a1]
+[emu-38:481056] [10] ./target/release/hpccg-rs(+0x6bc4)[0x56154e1a7bc4]
+[emu-38:481056] [11] ./target/release/hpccg-rs(+0xef60)[0x56154e1aff60]
+[emu-38:481056] [12] ./target/release/hpccg-rs(+0x10497)[0x56154e1b1497]
+[emu-38:481056] [13] ./target/release/hpccg-rs(+0x93c3)[0x56154e1aa3c3]
+[emu-38:481056] [14] ./target/release/hpccg-rs(+0x9991)[0x56154e1aa991]
+[emu-38:481056] [15] /lib64/libc.so.6(__libc_start_main+0xe5)[0x7f4c94050d85]
+[emu-38:481056] [16] ./target/release/hpccg-rs(+0x92fe)[0x56154e1aa2fe]
+[emu-38:481056] *** End of error message ***
+thread 'main' panicked at src/hpccg/make_local_matrix.rs:107:25:
+Must increase `MAX_EXTERNAL` from 100000
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[emu-41:3708013] *** Process received signal ***
+[emu-41:3708013] Signal: Aborted (6)
+[emu-41:3708013] Signal code:  (-6)
+[emu-41:3708013] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x7f3802b11cf0]
+[emu-41:3708013] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7f3802788acf]
+[emu-41:3708013] [ 2] /lib64/libc.so.6(abort+0x127)[0x7f380275bea5]
+[emu-41:3708013] [ 3] ./target/release/hpccg-rs(+0x22cc7)[0x56055da97cc7]
+[emu-41:3708013] [ 4] ./target/release/hpccg-rs(+0x22cb6)[0x56055da97cb6]
+[emu-41:3708013] [ 5] ./target/release/hpccg-rs(+0x55c66)[0x56055dacac66]
+[emu-41:3708013] [ 6] ./target/release/hpccg-rs(+0x57d29)[0x56055daccd29]
+[emu-41:3708013] [ 7] ./target/release/hpccg-rs(+0x57a5c)[0x56055dacca5c]
+[emu-41:3708013] [ 8] ./target/release/hpccg-rs(+0x579b6)[0x56055dacc9b6]
+[emu-41:3708013] [ 9] ./target/release/hpccg-rs(+0x579a1)[0x56055dacc9a1]
+[emu-41:3708013] [10] ./target/release/hpccg-rs(+0x6bc4)[0x56055da7bbc4]
+[emu-41:3708013] [11] ./target/release/hpccg-rs(+0xef60)[0x56055da83f60]
+[emu-41:3708013] [12] ./target/release/hpccg-rs(+0x10497)[0x56055da85497]
+[emu-41:3708013] [13] ./target/release/hpccg-rs(+0x93c3)[0x56055da7e3c3]
+[emu-41:3708013] [14] ./target/release/hpccg-rs(+0x9991)[0x56055da7e991]
+[emu-41:3708013] [15] /lib64/libc.so.6(__libc_start_main+0xe5)[0x7f3802774d85]
+[emu-41:3708013] [16] ./target/release/hpccg-rs(+0x92fe)[0x56055da7e2fe]
+[emu-41:3708013] *** End of error message ***
+thread 'main' panicked at src/hpccg/make_local_matrix.rs:107:25:
+Must increase `MAX_EXTERNAL` from 100000
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[emu-39:276678] *** Process received signal ***
+[emu-39:276678] Signal: Aborted (6)
+[emu-39:276678] Signal code:  (-6)
+[emu-39:276678] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x7fc06f3e5cf0]
+[emu-39:276678] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7fc06f05cacf]
+[emu-39:276678] [ 2] /lib64/libc.so.6(abort+0x127)[0x7fc06f02fea5]
+[emu-39:276678] [ 3] ./target/release/hpccg-rs(+0x22cc7)[0x55e620ea1cc7]
+[emu-39:276678] [ 4] ./target/release/hpccg-rs(+0x22cb6)[0x55e620ea1cb6]
+[emu-39:276678] [ 5] ./target/release/hpccg-rs(+0x55c66)[0x55e620ed4c66]
+[emu-39:276678] [ 6] ./target/release/hpccg-rs(+0x57d29)[0x55e620ed6d29]
+[emu-39:276678] [ 7] ./target/release/hpccg-rs(+0x57a5c)[0x55e620ed6a5c]
+[emu-39:276678] [ 8] ./target/release/hpccg-rs(+0x579b6)[0x55e620ed69b6]
+[emu-39:276678] [ 9] ./target/release/hpccg-rs(+0x579a1)[0x55e620ed69a1]
+[emu-39:276678] [10] ./target/release/hpccg-rs(+0x6bc4)[0x55e620e85bc4]
+[emu-39:276678] [11] ./target/release/hpccg-rs(+0xef60)[0x55e620e8df60]
+[emu-39:276678] [12] ./target/release/hpccg-rs(+0x10497)[0x55e620e8f497]
+[emu-39:276678] [13] ./target/release/hpccg-rs(+0x93c3)[0x55e620e883c3]
+[emu-39:276678] [14] ./target/release/hpccg-rs(+0x9991)[0x55e620e88991]
+[emu-39:276678] [15] /lib64/libc.so.6(__libc_start_main+0xe5)[0x7fc06f048d85]
+[emu-39:276678] [16] ./target/release/hpccg-rs(+0x92fe)[0x55e620e882fe]
+[emu-39:276678] *** End of error message ***
+thread 'main' panicked at src/hpccg/make_local_matrix.rs:107:25:
+Must increase `MAX_EXTERNAL` from 100000
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[emu-40:454740] *** Process received signal ***
+[emu-40:454740] Signal: Aborted (6)
+[emu-40:454740] Signal code:  (-6)
+[emu-40:454740] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x7f0829b5ecf0]
+[emu-40:454740] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7f08297d5acf]
+[emu-40:454740] [ 2] /lib64/libc.so.6(abort+0x127)[0x7f08297a8ea5]
+[emu-40:454740] [ 3] ./target/release/hpccg-rs(+0x22cc7)[0x55c54d9f1cc7]
+[emu-40:454740] [ 4] ./target/release/hpccg-rs(+0x22cb6)[0x55c54d9f1cb6]
+[emu-40:454740] [ 5] ./target/release/hpccg-rs(+0x55c66)[0x55c54da24c66]
+[emu-40:454740] [ 6] ./target/release/hpccg-rs(+0x57d29)[0x55c54da26d29]
+[emu-40:454740] [ 7] ./target/release/hpccg-rs(+0x57a5c)[0x55c54da26a5c]
+[emu-40:454740] [ 8] ./target/release/hpccg-rs(+0x579b6)[0x55c54da269b6]
+[emu-40:454740] [ 9] ./target/release/hpccg-rs(+0x579a1)[0x55c54da269a1]
+[emu-40:454740] [10] ./target/release/hpccg-rs(+0x6bc4)[0x55c54d9d5bc4]
+[emu-40:454740] [11] ./target/release/hpccg-rs(+0xef60)[0x55c54d9ddf60]
+[emu-40:454740] [12] ./target/release/hpccg-rs(+0x10497)[0x55c54d9df497]
+[emu-40:454740] [13] ./target/release/hpccg-rs(+0x93c3)[0x55c54d9d83c3]
+[emu-40:454740] [14] ./target/release/hpccg-rs(+0x9991)[0x55c54d9d8991]
+[emu-40:454740] [15] /lib64/libc.so.6(__libc_start_main+0xe5)[0x7f08297c1d85]
+[emu-40:454740] [16] ./target/release/hpccg-rs(+0x92fe)[0x55c54d9d82fe]
+[emu-40:454740] *** End of error message ***
+thread 'main' panicked at src/hpccg/make_local_matrix.rs:107:25:
+Must increase `MAX_EXTERNAL` from 100000
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[emu-40:454739] *** Process received signal ***
+[emu-40:454739] Signal: Aborted (6)
+[emu-40:454739] Signal code:  (-6)
+[emu-40:454739] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x7f30bf7c6cf0]
+[emu-40:454739] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7f30bf43dacf]
+[emu-40:454739] [ 2] /lib64/libc.so.6(abort+0x127)[0x7f30bf410ea5]
+[emu-40:454739] [ 3] ./target/release/hpccg-rs(+0x22cc7)[0x562beb9d0cc7]
+[emu-40:454739] [ 4] ./target/release/hpccg-rs(+0x22cb6)[0x562beb9d0cb6]
+[emu-40:454739] [ 5] ./target/release/hpccg-rs(+0x55c66)[0x562beba03c66]
+[emu-40:454739] [ 6] ./target/release/hpccg-rs(+0x57d29)[0x562beba05d29]
+[emu-40:454739] [ 7] ./target/release/hpccg-rs(+0x57a5c)[0x562beba05a5c]
+[emu-40:454739] [ 8] ./target/release/hpccg-rs(+0x579b6)[0x562beba059b6]
+[emu-40:454739] [ 9] ./target/release/hpccg-rs(+0x579a1)[0x562beba059a1]
+[emu-40:454739] [10] ./target/release/hpccg-rs(+0x6bc4)[0x562beb9b4bc4]
+[emu-40:454739] [11] ./target/release/hpccg-rs(+0xef60)[0x562beb9bcf60]
+[emu-40:454739] [12] ./target/release/hpccg-rs(+0x10497)[0x562beb9be497]
+[emu-40:454739] [13] ./target/release/hpccg-rs(+0x93c3)[0x562beb9b73c3]
+[emu-40:454739] [14] ./target/release/hpccg-rs(+0x9991)[0x562beb9b7991]
+[emu-40:454739] [15] /lib64/libc.so.6(__libc_start_main+0xe5)[0x7f30bf429d85]
+[emu-40:454739] [16] ./target/release/hpccg-rs(+0x92fe)[0x562beb9b72fe]
+[emu-40:454739] *** End of error message ***
+thread 'main' panicked at src/hpccg/make_local_matrix.rs:107:25:
+Must increase `MAX_EXTERNAL` from 100000
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[emu-39:276677] *** Process received signal ***
+[emu-39:276677] Signal: Aborted (6)
+[emu-39:276677] Signal code:  (-6)
+[emu-39:276677] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x7f084c697cf0]
+[emu-39:276677] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7f084c30eacf]
+[emu-39:276677] [ 2] /lib64/libc.so.6(abort+0x127)[0x7f084c2e1ea5]
+[emu-39:276677] [ 3] ./target/release/hpccg-rs(+0x22cc7)[0x55e675369cc7]
+[emu-39:276677] [ 4] ./target/release/hpccg-rs(+0x22cb6)[0x55e675369cb6]
+[emu-39:276677] [ 5] ./target/release/hpccg-rs(+0x55c66)[0x55e67539cc66]
+[emu-39:276677] [ 6] ./target/release/hpccg-rs(+0x57d29)[0x55e67539ed29]
+[emu-39:276677] [ 7] ./target/release/hpccg-rs(+0x57a5c)[0x55e67539ea5c]
+[emu-39:276677] [ 8] ./target/release/hpccg-rs(+0x579b6)[0x55e67539e9b6]
+[emu-39:276677] [ 9] ./target/release/hpccg-rs(+0x579a1)[0x55e67539e9a1]
+[emu-39:276677] [10] ./target/release/hpccg-rs(+0x6bc4)[0x55e67534dbc4]
+[emu-39:276677] [11] ./target/release/hpccg-rs(+0xef60)[0x55e675355f60]
+[emu-39:276677] [12] ./target/release/hpccg-rs(+0x10497)[0x55e675357497]
+[emu-39:276677] [13] ./target/release/hpccg-rs(+0x93c3)[0x55e6753503c3]
+[emu-39:276677] [14] ./target/release/hpccg-rs(+0x9991)[0x55e675350991]
+[emu-39:276677] [15] /lib64/libc.so.6(__libc_start_main+0xe5)[0x7f084c2fad85]
+[emu-39:276677] [16] ./target/release/hpccg-rs(+0x92fe)[0x55e6753502fe]
+[emu-39:276677] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+[emu-38:481043] 7 more processes have sent help message help-mpi-btl-openib.txt / no active ports found
+[emu-38:481043] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+--------------------------------------------------------------------------
+mpirun noticed that process rank 1 with PID 0 on node emu-38 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+3 total processes killed (some possibly by mpirun during cleanup)
+real 6.49
+user 5.18
+sys 2.06

@@ -404,4 +404,4 @@ benches:
         - title: "C++, Kokkos, and Rust with MPI & Multi-Threading Version Comparison"
           y: "Wall time (s)"
           fix_metrics:
-            "Mesh x size": 400
+            "Mesh x size": 250
