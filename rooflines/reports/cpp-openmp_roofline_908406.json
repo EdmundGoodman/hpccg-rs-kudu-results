@@ -1,0 +1,4875 @@
+{
+  "rooflineData": {
+    "attrs": {
+      "selfElapsedTime": {
+        "name": "Self Elapsed Time",
+        "measure": "s"
+      },
+      "selfTime": {
+        "name": "Self Time",
+        "measure": "s"
+      },
+      "totalElapsedTime": {
+        "name": "Total Elapsed Time",
+        "measure": "s"
+      },
+      "totalTime": {
+        "name": "Total Time",
+        "measure": "s"
+      },
+      "selfMem": {
+        "name": "Self Memory Traffic",
+        "measure": "GB"
+      },
+      "totalMem": {
+        "name": "Total Memory Traffic",
+        "measure": "GB"
+      }
+    },
+    "nameX": "Arithmetic Intensity",
+    "nameY": "Performance",
+    "measureX": "FLOP/Byte",
+    "measureY": "GFLOPS",
+    "memoryLevelPref": "L1-",
+    "withCallstacks": 0,
+    "minX": -1.505149978319906,
+    "minY": -2.779733421133316,
+    "maxX": -0.5440680443502756,
+    "maxY": 1.2097385712835934,
+    "selfElapsedTime": 0.1811184211,
+    "selfTime": 2.3086104408999996,
+    "totalElapsedTime": 0.1811184211,
+    "totalTime": 2.3086104408999996,
+    "selfMem": 12.024755999999999,
+    "totalMem": 12.024755999999999,
+    "programTotal": [
+      {
+        "name": "CARM (L1 + NTS) Program Total for All Functions and Loops",
+        "memoryLevelPref": "L1-",
+        "x": -1.0303537479226264,
+        "y": 0.79175990117618,
+        "selfElapsedTime": 0.1811184211,
+        "selfTime": 2.3086104408999996,
+        "totalElapsedTime": 0.1811184211,
+        "totalTime": 2.3086104408999996,
+        "selfMem": 12.024755999999999,
+        "totalMem": 12.024755999999999
+      }
+    ],
+    "roofs": "",
+    "loopTypes": {
+      "2": "Function",
+      "4": "Function; processes Int32;  data type(s)",
+      "7": "Function; processes Int32; Int64; UInt256 data type(s)",
+      "5": "Function; processes Int32; UInt16 data type(s)",
+      "8": "Function; processes Int64; UInt256 data type(s)",
+      "3": "Scalar",
+      "0": "Scalar; processes Int64 data type(s)",
+      "6": "Vectorized (Body) SSE2; processes Int64;  data type(s)",
+      "1": "Vectorized (Body) SSE2; processes Int64; UInt256 data type(s)"
+    },
+    "loops": [
+      {
+        "id": 93917989383424,
+        "key": 20,
+        "locat": "",
+        "name": "[loop in HPC_sparsemv._omp_fn.0]",
+        "objId": 20,
+        "selfElapsedTime": 0.12000458110000001,
+        "selfMem": 9.725376,
+        "selfTime": 2.1786463803999998,
+        "totalElapsedTime": 0.12000458110000001,
+        "totalTime": 2.1786463803999998,
+        "type": 0,
+        "x": -1.0,
+        "y": 0.9087085756196122
+      },
+      {
+        "id": 93917989384880,
+        "key": 31,
+        "locat": "",
+        "name": "[loop in ddot._omp_fn.1]",
+        "objId": 31,
+        "selfElapsedTime": 0.0100022679,
+        "selfMem": 0.29798092800000006,
+        "selfTime": 0.0500048406,
+        "totalElapsedTime": 0.0100022679,
+        "totalTime": 0.0500048406,
+        "type": 1,
+        "vec": 1,
+        "x": -0.9030899869919435,
+        "y": 0.5709999988694446
+      },
+      {
+        "id": 93917989384048,
+        "key": 23,
+        "locat": "",
+        "name": "[loop in waxpby._omp_fn.0]",
+        "objId": 23,
+        "selfElapsedTime": 0.0299869732,
+        "selfMem": 1.338,
+        "selfTime": 0.0399844761,
+        "totalElapsedTime": 0.0299869732,
+        "totalTime": 0.0399844761,
+        "type": 0,
+        "x": -1.0791812460476249,
+        "y": 0.570342235865322
+      },
+      {
+        "id": 93917989384464,
+        "key": 26,
+        "locat": "",
+        "name": "[loop in ddot._omp_fn.0]",
+        "objId": 26,
+        "selfElapsedTime": 0.0099951469,
+        "selfMem": 0.0005311360000000001,
+        "selfTime": 0.0099951469,
+        "totalElapsedTime": 0.0099951469,
+        "totalTime": 0.0099951469,
+        "type": 1,
+        "vec": 1,
+        "x": -1.505149978319906,
+        "y": -2.779733421133316
+      }
+    ],
+    "allRoofs": [
+      {
+        "threadCount": 1,
+        "strategyId": "rsiMultiThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 2.499022213631653,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth (single-threaded)",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 1.9295737477282238,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth (single-threaded)",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 1.5511551028191502,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth (single-threaded)",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 6,
+            "val": 1.1137838797298124,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "DRAM Bandwidth (single-threaded)",
+            "desc": "DRAM roof represents the maximum bandwidth of DRAM memory on your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that does not fit in CPU caches.",
+            "device": 1,
+            "memoryLevel": "DRAM",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 7,
+            "val": 1.995644710367948,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "SP Vector FMA Peak (single-threaded)",
+            "desc": "Single-precision vector FMA roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of vector FMA instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 2,
+            "dataType": 8
+          },
+          {
+            "id": 8,
+            "val": 1.6943997248767247,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "DP Vector FMA Peak (single-threaded)",
+            "desc": "Double-precision vector FMA roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of vector FMA instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 2,
+            "dataType": 9
+          },
+          {
+            "id": 9,
+            "val": 0.5175756417354425,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "Scalar Add Peak (single-threaded)",
+            "desc": "Scalar ADD roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of scalar instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 1,
+            "dataType": 8
+          },
+          {
+            "id": 10,
+            "val": 1.3931950579448405,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "SP Vector Add Peak (single-threaded)",
+            "desc": "Single-precision vector ADD roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of vector ADD instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 1,
+            "dataType": 8
+          },
+          {
+            "id": 11,
+            "val": 1.0921388601368954,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "DP Vector Add Peak (single-threaded)",
+            "desc": "Double-precision vector ADD roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of vector ADD instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 1,
+            "dataType": 9
+          },
+          {
+            "id": 22,
+            "val": 1.8174185761436892,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth (single-threaded)",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 1.4062614412083772,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth (single-threaded)",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 1.3754603096892666,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth (single-threaded)",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 2,
+        "strategyId": "rsiMultiThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 2.800052209295634,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.230603743392205,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 1.8521850984831315,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.1184485718076706,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 1.7072914368723585,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 1.6764903053532479,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 4,
+        "strategyId": "rsiMultiThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.1010822049596156,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.5316337390561864,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.1532150941471128,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.4194785674716519,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.0083214325363398,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 1.977520301017229,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 6,
+        "strategyId": "rsiMultiThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.2771734640152969,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.7077249981118678,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.329306353202794,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.595569826527333,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.184412691592021,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.1536115600729106,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 8,
+        "strategyId": "rsiMultiThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.4021122006235968,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.8326637347201677,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.454245089811094,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.720508563135633,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.309351428200321,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.2785502966812105,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 10,
+        "strategyId": "rsiMultiThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.499022213631653,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.9295737477282239,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.55115510281915,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.817418576143689,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.406261441208377,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.3754603096892668,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 12,
+        "strategyId": "rsiMultiThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.578203459679278,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 3.008754993775849,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.6303363488667754,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.8965998221913145,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.4854426872560024,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.4546415557368919,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 14,
+        "strategyId": "rsiMultiThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.645150249309891,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 3.075701783406462,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.6972831384973885,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.9635466118219275,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.5523894768866155,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.5215883453675049,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 16,
+        "strategyId": "rsiMultiThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.703142196287578,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 3.133693730384149,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.755275085475075,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 3.021538558799614,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.610381423864302,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.5795802923451918,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 18,
+        "strategyId": "rsiMultiThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.7542947187349595,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 3.1848462528315304,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.8064276079224568,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 3.0726910812469958,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.6615339463116838,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.630732814792573,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 20,
+        "strategyId": "rsiMultiThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.800052209295634,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 3.230603743392205,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.8521850984831316,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 3.1184485718076706,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.7072914368723586,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.676490305353248,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 1,
+        "strategyId": "rsiSingleThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 2.499022213631653,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth (single-threaded)",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 1.9295737477282238,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth (single-threaded)",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 1.5511551028191502,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth (single-threaded)",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 6,
+            "val": 1.1137838797298124,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "DRAM Bandwidth (single-threaded)",
+            "desc": "DRAM roof represents the maximum bandwidth of DRAM memory on your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that does not fit in CPU caches.",
+            "device": 1,
+            "memoryLevel": "DRAM",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 7,
+            "val": 1.995644710367948,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "SP Vector FMA Peak (single-threaded)",
+            "desc": "Single-precision vector FMA roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of vector FMA instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 2,
+            "dataType": 8
+          },
+          {
+            "id": 8,
+            "val": 1.6943997248767247,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "DP Vector FMA Peak (single-threaded)",
+            "desc": "Double-precision vector FMA roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of vector FMA instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 2,
+            "dataType": 9
+          },
+          {
+            "id": 9,
+            "val": 0.5175756417354425,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "Scalar Add Peak (single-threaded)",
+            "desc": "Scalar ADD roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of scalar instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 1,
+            "dataType": 8
+          },
+          {
+            "id": 10,
+            "val": 1.3931950579448405,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "SP Vector Add Peak (single-threaded)",
+            "desc": "Single-precision vector ADD roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of vector ADD instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 1,
+            "dataType": 8
+          },
+          {
+            "id": 11,
+            "val": 1.0921388601368954,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "DP Vector Add Peak (single-threaded)",
+            "desc": "Double-precision vector ADD roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of vector ADD instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 1,
+            "dataType": 9
+          },
+          {
+            "id": 22,
+            "val": 1.8174185761436892,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth (single-threaded)",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 1.4062614412083772,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth (single-threaded)",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 1.3754603096892666,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth (single-threaded)",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 2,
+        "strategyId": "rsiSingleThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 2.800052209295634,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.230603743392205,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 1.8521850984831315,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 6,
+            "val": 1.0258884066946586,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "DRAM Bandwidth",
+            "desc": "DRAM roof represents the maximum bandwidth of DRAM memory on your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that does not fit in CPU caches.",
+            "device": 1,
+            "memoryLevel": "DRAM",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.2966747060319294,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.9954297205407059,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 0.8186056373994219,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.6942250536088218,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.3931688558008766,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.1184485718076706,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 1.7072914368723585,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 1.6764903053532479,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 4,
+        "strategyId": "rsiSingleThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.1010822049596156,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.5316337390561864,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.1532150941471128,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 6,
+            "val": 0.7796567237975722,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "DRAM Bandwidth",
+            "desc": "DRAM roof represents the maximum bandwidth of DRAM memory on your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that does not fit in CPU caches.",
+            "device": 1,
+            "memoryLevel": "DRAM",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.5977047016959107,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.296459716204687,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.1196356330634033,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.9952550492728012,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.6941988514648579,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.4194785674716519,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.0083214325363398,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 1.977520301017229,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 6,
+        "strategyId": "rsiSingleThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.2771734640152969,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.7077249981118678,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.329306353202794,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 6,
+            "val": 0.39598694225376365,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "DRAM Bandwidth",
+            "desc": "DRAM roof represents the maximum bandwidth of DRAM memory on your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that does not fit in CPU caches.",
+            "device": 1,
+            "memoryLevel": "DRAM",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.773795960751592,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.4725509752603669,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.2957268921190846,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.1713463083284827,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.8702901105205392,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.595569826527333,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.184412691592021,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.1536115600729106,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 8,
+        "strategyId": "rsiSingleThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.4021122006235968,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.8326637347201677,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.454245089811094,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 6,
+            "val": 0.0053692089342156639,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "DRAM Bandwidth",
+            "desc": "DRAM roof represents the maximum bandwidth of DRAM memory on your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that does not fit in CPU caches.",
+            "device": 1,
+            "memoryLevel": "DRAM",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.8987346973598919,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.5974897118686686,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.4206656287273845,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.2962850449367826,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.995228847128839,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.720508563135633,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.309351428200321,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.2785502966812105,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 10,
+        "strategyId": "rsiSingleThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.499022213631653,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.9295737477282239,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.55115510281915,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 6,
+            "val": -0.15299328362430843,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "DRAM Bandwidth",
+            "desc": "DRAM roof represents the maximum bandwidth of DRAM memory on your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that does not fit in CPU caches.",
+            "device": 1,
+            "memoryLevel": "DRAM",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.995644710367948,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.6943997248767248,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.5175756417354425,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.3931950579448406,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.0921388601368955,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.817418576143689,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.406261441208377,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.3754603096892668,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 12,
+        "strategyId": "rsiSingleThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.578203459679278,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 3.008754993775849,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.6303363488667754,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 6,
+            "val": -0.34681330917714706,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "DRAM Bandwidth",
+            "desc": "DRAM roof represents the maximum bandwidth of DRAM memory on your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that does not fit in CPU caches.",
+            "device": 1,
+            "memoryLevel": "DRAM",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 3.074825956415573,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.773580970924348,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.5967568877830659,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.4723763039924639,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.1713201061845206,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.8965998221913145,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.4854426872560024,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.4546415557368919,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 14,
+        "strategyId": "rsiSingleThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.645150249309891,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 3.075701783406462,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.6972831384973885,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 6,
+            "val": -0.5966907836806215,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "DRAM Bandwidth",
+            "desc": "DRAM roof represents the maximum bandwidth of DRAM memory on your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that does not fit in CPU caches.",
+            "device": 1,
+            "memoryLevel": "DRAM",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 3.141772746046186,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.840527760554963,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.6637036774136789,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.539323093623077,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.2382668958151337,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.9635466118219275,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.5523894768866155,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.5215883453675049,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 16,
+        "strategyId": "rsiSingleThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.703142196287578,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 3.133693730384149,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.755275085475075,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 6,
+            "val": -0.9488733005051095,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "DRAM Bandwidth",
+            "desc": "DRAM roof represents the maximum bandwidth of DRAM memory on your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that does not fit in CPU caches.",
+            "device": 1,
+            "memoryLevel": "DRAM",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 3.199764693023873,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.898519707532648,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.7216956243913658,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.5973150406007639,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.2962588427928205,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 3.021538558799614,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.610381423864302,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.5795802923451918,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 18,
+        "strategyId": "rsiSingleThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.7542947187349595,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 3.1848462528315304,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.8064276079224568,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 6,
+            "val": -1.5509333034149462,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "DRAM Bandwidth",
+            "desc": "DRAM roof represents the maximum bandwidth of DRAM memory on your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that does not fit in CPU caches.",
+            "device": 1,
+            "memoryLevel": "DRAM",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 3.2509172154712546,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.9496722299800295,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.7728481468387472,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.648467563048145,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.3474113652402019,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 3.0726910812469958,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.6615339463116838,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.630732814792573,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 20,
+        "strategyId": "rsiSingleThread",
+        "packageCount": 2,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.800052209295634,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 3.230603743392205,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.8521850984831316,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 3.1184485718076706,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.7072914368723586,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.676490305353248,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 1,
+        "strategyId": "rsiMultiThread",
+        "packageCount": 1,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 2.499022213631653,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth (single-threaded)",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 1.9295737477282238,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth (single-threaded)",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 1.5511551028191502,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth (single-threaded)",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 6,
+            "val": 1.1137838797298124,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "DRAM Bandwidth (single-threaded)",
+            "desc": "DRAM roof represents the maximum bandwidth of DRAM memory on your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that does not fit in CPU caches.",
+            "device": 1,
+            "memoryLevel": "DRAM",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 7,
+            "val": 1.995644710367948,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "SP Vector FMA Peak (single-threaded)",
+            "desc": "Single-precision vector FMA roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of vector FMA instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 2,
+            "dataType": 8
+          },
+          {
+            "id": 8,
+            "val": 1.6943997248767247,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "DP Vector FMA Peak (single-threaded)",
+            "desc": "Double-precision vector FMA roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of vector FMA instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 2,
+            "dataType": 9
+          },
+          {
+            "id": 9,
+            "val": 0.5175756417354425,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "Scalar Add Peak (single-threaded)",
+            "desc": "Scalar ADD roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of scalar instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 1,
+            "dataType": 8
+          },
+          {
+            "id": 10,
+            "val": 1.3931950579448405,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "SP Vector Add Peak (single-threaded)",
+            "desc": "Single-precision vector ADD roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of vector ADD instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 1,
+            "dataType": 8
+          },
+          {
+            "id": 11,
+            "val": 1.0921388601368954,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "DP Vector Add Peak (single-threaded)",
+            "desc": "Double-precision vector ADD roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of vector ADD instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 1,
+            "dataType": 9
+          },
+          {
+            "id": 22,
+            "val": 1.8174185761436892,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth (single-threaded)",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 1.4062614412083772,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth (single-threaded)",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 1.3754603096892666,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth (single-threaded)",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 2,
+        "strategyId": "rsiMultiThread",
+        "packageCount": 1,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 2.800052209295634,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.230603743392205,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 1.8521850984831315,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.1184485718076706,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 1.7072914368723585,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 1.6764903053532479,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 4,
+        "strategyId": "rsiMultiThread",
+        "packageCount": 1,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.1010822049596156,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.5316337390561864,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.1532150941471128,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.4194785674716519,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.0083214325363398,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 1.977520301017229,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 6,
+        "strategyId": "rsiMultiThread",
+        "packageCount": 1,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.2771734640152969,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.7077249981118678,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.329306353202794,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.595569826527333,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.184412691592021,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.1536115600729106,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 8,
+        "strategyId": "rsiMultiThread",
+        "packageCount": 1,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.4021122006235968,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.8326637347201677,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.454245089811094,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.720508563135633,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.309351428200321,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.2785502966812105,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 10,
+        "strategyId": "rsiMultiThread",
+        "packageCount": 1,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.499022213631653,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.9295737477282239,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.55115510281915,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.817418576143689,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.406261441208377,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.3754603096892668,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 1,
+        "strategyId": "rsiSingleThread",
+        "packageCount": 1,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 2.499022213631653,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth (single-threaded)",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 1.9295737477282238,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth (single-threaded)",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 1.5511551028191502,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth (single-threaded)",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 6,
+            "val": 1.1137838797298124,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "DRAM Bandwidth (single-threaded)",
+            "desc": "DRAM roof represents the maximum bandwidth of DRAM memory on your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that does not fit in CPU caches.",
+            "device": 1,
+            "memoryLevel": "DRAM",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 7,
+            "val": 1.995644710367948,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "SP Vector FMA Peak (single-threaded)",
+            "desc": "Single-precision vector FMA roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of vector FMA instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 2,
+            "dataType": 8
+          },
+          {
+            "id": 8,
+            "val": 1.6943997248767247,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "DP Vector FMA Peak (single-threaded)",
+            "desc": "Double-precision vector FMA roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of vector FMA instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 2,
+            "dataType": 9
+          },
+          {
+            "id": 9,
+            "val": 0.5175756417354425,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "Scalar Add Peak (single-threaded)",
+            "desc": "Scalar ADD roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of scalar instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 1,
+            "dataType": 8
+          },
+          {
+            "id": 10,
+            "val": 1.3931950579448405,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "SP Vector Add Peak (single-threaded)",
+            "desc": "Single-precision vector ADD roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of vector ADD instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 1,
+            "dataType": 8
+          },
+          {
+            "id": 11,
+            "val": 1.0921388601368954,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "DP Vector Add Peak (single-threaded)",
+            "desc": "Double-precision vector ADD roof represents the maximum number of floating-point operations per second (FLOPS) for your current hardware when using unrolled loop of vector ADD instructions.",
+            "device": 1,
+            "memoryLevel": "",
+            "opType": 1,
+            "dataType": 9
+          },
+          {
+            "id": 22,
+            "val": 1.8174185761436892,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth (single-threaded)",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 1.4062614412083772,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth (single-threaded)",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 1.3754603096892666,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth (single-threaded)",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 2,
+        "strategyId": "rsiSingleThread",
+        "packageCount": 1,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 2.800052209295634,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.230603743392205,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 1.8521850984831315,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 6,
+            "val": 0.9562916567338409,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "DRAM Bandwidth",
+            "desc": "DRAM roof represents the maximum bandwidth of DRAM memory on your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that does not fit in CPU caches.",
+            "device": 1,
+            "memoryLevel": "DRAM",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.2966747060319294,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.9954297205407059,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 0.8186056373994219,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.6942250536088218,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.3931688558008766,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.1184485718076706,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 1.7072914368723585,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 1.6764903053532479,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 4,
+        "strategyId": "rsiSingleThread",
+        "packageCount": 1,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.1010822049596156,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.5316337390561864,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.1532150941471128,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 6,
+            "val": 0.4243523891546328,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "DRAM Bandwidth",
+            "desc": "DRAM roof represents the maximum bandwidth of DRAM memory on your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that does not fit in CPU caches.",
+            "device": 1,
+            "memoryLevel": "DRAM",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.5977047016959107,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.296459716204687,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.1196356330634033,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.9952550492728012,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.6941988514648579,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.4194785674716519,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.0083214325363398,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 1.977520301017229,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 6,
+        "strategyId": "rsiSingleThread",
+        "packageCount": 1,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.2771734640152969,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.7077249981118678,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.329306353202794,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 6,
+            "val": -0.47594237776362116,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "DRAM Bandwidth",
+            "desc": "DRAM roof represents the maximum bandwidth of DRAM memory on your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that does not fit in CPU caches.",
+            "device": 1,
+            "memoryLevel": "DRAM",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.773795960751592,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.4725509752603669,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.2957268921190846,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.1713463083284827,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.8702901105205392,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.595569826527333,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.184412691592021,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.1536115600729106,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 8,
+        "strategyId": "rsiSingleThread",
+        "packageCount": 1,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.4021122006235968,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.8326637347201677,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.454245089811094,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 6,
+            "val": -1.0780023690915837,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "DRAM Bandwidth",
+            "desc": "DRAM roof represents the maximum bandwidth of DRAM memory on your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that does not fit in CPU caches.",
+            "device": 1,
+            "memoryLevel": "DRAM",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.8987346973598919,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.5974897118686686,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.4206656287273845,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.2962850449367826,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.995228847128839,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.720508563135633,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.309351428200321,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.2785502966812105,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      },
+      {
+        "threadCount": 10,
+        "strategyId": "rsiSingleThread",
+        "packageCount": 1,
+        "roofs": [
+          {
+            "id": 1,
+            "val": 3.499022213631653,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L1 Bandwidth",
+            "desc": "L1 cache roof represents the maximum bandwidth of L1 cache for your current hardware. Measured with optimized sequence of SIMD load and store operations iterating over the array that fits entirely into L1 cache.",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 2,
+            "val": 2.9295737477282239,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L2 Bandwidth",
+            "desc": "L2 cache roof represents the maximum bandwidth of L2 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L2 cache but does not fit into L1.",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 3,
+            "val": 2.55115510281915,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "L3 Bandwidth",
+            "desc": "L3 cache roof represents the maximum bandwidth of L3 cache for your current hardware. Measured with optimized sequence of Intel SSE/AVX/AVX-512 load operations iterating over the array that fits entirely into L3 cache but does not fit into L2.",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.995644710367948,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.6943997248767248,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 1.5175756417354425,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.3931950579448406,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 0,
+            "val": 2.0921388601368955,
+            "isSingleNode": 0,
+            "measure": "GFLOPS",
+            "name": "",
+            "desc": "",
+            "device": 0,
+            "memoryLevel": "",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 22,
+            "val": 2.817418576143689,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L1 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L1",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 23,
+            "val": 2.406261441208377,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L2 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L2",
+            "opType": 0,
+            "dataType": 0
+          },
+          {
+            "id": 24,
+            "val": 2.3754603096892668,
+            "isMem": 1,
+            "isSingleNode": 0,
+            "measure": "GB/sec",
+            "name": "Scalar L3 Bandwidth",
+            "desc": "",
+            "device": 1,
+            "memoryLevel": "L3",
+            "opType": 0,
+            "dataType": 0
+          }
+        ]
+      }
+    ]
+  },
+  "selectedRoofs": {
+    "roofsState": {
+      "drambandwidth(singlenode)": {
+        "selected": true,
+        "hidden": false
+      },
+      "drambandwidth": {
+        "selected": true,
+        "hidden": false
+      },
+      "l1bandwidth": {
+        "selected": true,
+        "hidden": false
+      },
+      "scalarl1bandwidth": {
+        "selected": false,
+        "hidden": true
+      },
+      "l2bandwidth": {
+        "selected": false,
+        "hidden": false
+      },
+      "scalarl2bandwidth": {
+        "selected": false,
+        "hidden": true
+      },
+      "l3bandwidth": {
+        "selected": false,
+        "hidden": false
+      },
+      "scalarl3bandwidth": {
+        "selected": false,
+        "hidden": true
+      },
+      "spvectorfmapeak": {
+        "selected": false,
+        "hidden": false
+      },
+      "dpvectorfmapeak": {
+        "selected": false,
+        "hidden": false
+      },
+      "scalaraddpeak": {
+        "selected": true,
+        "hidden": false
+      },
+      "spvectoraddpeak": {
+        "selected": false,
+        "hidden": false
+      },
+      "dpvectoraddpeak": {
+        "selected": false,
+        "hidden": false
+      },
+      "integerscalaraddpeak": {
+        "selected": true,
+        "hidden": false
+      },
+      "int64vectoraddpeak": {
+        "selected": false,
+        "hidden": false
+      },
+      "int32vectoraddpeak": {
+        "selected": false,
+        "hidden": false
+      }
+    }
+  },
+  "threadsInfo": {
+    "physicalCoreCount": 20,
+    "processorPackageCount": 2,
+    "usedNumberOfThreads": 32
+  },
+  "summaryInfo": {
+    "project": {
+      "caption": "Project",
+      "value": "/dcs/20/u2006527/Desktop/project/hpccg-rs/0_cpp_versions/1_openmp/e000",
+      "name": "1_openmp",
+      "path": "/dcs/20/u2006527/Desktop/project/hpccg-rs/0_cpp_versions/1_openmp",
+      "snapshot": false
+    },
+    "results": {
+      "0": [
+        {
+          "caption": "Collection started",
+          "value": "14 April 2024, 13:20:36"
+        },
+        {
+          "caption": "Collection finished",
+          "value": "14 April 2024, 13:20:37"
+        },
+        {
+          "caption": "Collection time",
+          "value": "00 min 01 sec"
+        },
+        {
+          "caption": "Finalization time",
+          "value": "00 min 05 sec"
+        },
+        {
+          "caption": "Full time",
+          "value": "00 min 06 sec"
+        },
+        {
+          "caption": "Collection Log",
+          "value": "See log",
+          "path": "",
+          "resultLogFileType": 0
+        },
+        {
+          "caption": "Application Output",
+          "value": "See output",
+          "path": "",
+          "resultLogFileType": 1
+        },
+        {
+          "caption": "Collection Command Line",
+          "value": "See command line",
+          "path": "",
+          "resultLogFileType": 2
+        }
+      ],
+      "4": [
+        {
+          "caption": "Collection started",
+          "value": "14 April 2024, 13:20:44"
+        },
+        {
+          "caption": "Collection finished",
+          "value": "14 April 2024, 13:20:57"
+        },
+        {
+          "caption": "Collection time",
+          "value": "00 min 13 sec"
+        },
+        {
+          "caption": "Finalization time",
+          "value": "00 min 04 sec"
+        },
+        {
+          "caption": "Full time",
+          "value": "00 min 17 sec"
+        },
+        {
+          "caption": "Collection Log",
+          "value": "See log",
+          "path": "",
+          "resultLogFileType": 0
+        },
+        {
+          "caption": "Application Output",
+          "value": "See output",
+          "path": "",
+          "resultLogFileType": 1
+        },
+        {
+          "caption": "Collection Command Line",
+          "value": "See command line",
+          "path": "",
+          "resultLogFileType": 2
+        }
+      ]
+    },
+    "platform": [
+      {
+        "caption": "CPU Name",
+        "value": "Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz"
+      },
+      {
+        "caption": "Frequency",
+        "value": "2.60 GHz"
+      },
+      {
+        "caption": "Logical CPU Count",
+        "value": 40
+      },
+      {
+        "caption": "Operating System",
+        "value": "Linux"
+      },
+      {
+        "caption": "Computer Name",
+        "value": "emu-41"
+      }
+    ],
+    "program": [
+      {
+        "caption": "Program Elapsed Time",
+        "value": "0.18s",
+        "tooltip": "",
+        "warning": ""
+      },
+      {
+        "caption": "INT+FLOAT Giga OPS",
+        "value": 13.57,
+        "tooltip": "",
+        "warning": "",
+        "children": [
+          {
+            "caption": "INT+FLOAT Giga OP Count",
+            "value": 2.458,
+            "tooltip": "",
+            "warning": ""
+          },
+          {
+            "caption": "INT+FLOAT Arithmetic Intensity",
+            "value": 0.20133,
+            "tooltip": "INT+FLOAT AI is a measure of INT+FLOAT Giga OPs performed by program relative to the amount of Gigabytes required to those operations.",
+            "warning": ""
+          }
+        ]
+      },
+      {
+        "caption": "Vector Instruction Set",
+        "value": "SSE2, SSE",
+        "tooltip": "",
+        "warning": "Higher Instruction Set Architecture (ISA) Available"
+      },
+      {
+        "caption": "GFLOPS",
+        "value": 6.40,
+        "tooltip": "",
+        "warning": "",
+        "children": [
+          {
+            "caption": "GFLOP Count",
+            "value": 1.159,
+            "tooltip": "",
+            "warning": ""
+          },
+          {
+            "caption": "FP Arithmetic Intensity",
+            "value": 0.09498,
+            "tooltip": "FP AI is a measure of GFLOPs performed by program relative to the amount of Gigabytes required to those operations.",
+            "warning": ""
+          }
+        ]
+      },
+      {
+        "caption": "Number of CPU Threads",
+        "value": 32,
+        "tooltip": "",
+        "warning": ""
+      },
+      {
+        "caption": "GINTOPS",
+        "value": 7.17,
+        "tooltip": "",
+        "warning": "",
+        "children": [
+          {
+            "caption": "GINTOP Count",
+            "value": 1.298,
+            "tooltip": "",
+            "warning": ""
+          },
+          {
+            "caption": "INT Arithmetic Intensity",
+            "value": 0.10635,
+            "tooltip": "INT AI is a measure of GINTOPs performed by program relative to the amount of Gigabytes required to those operations.",
+            "warning": ""
+          }
+        ]
+      }
+    ],
+    "functionsAndLoops": [
+      {
+        "caption": "CPU Time",
+        "value": "4.18s",
+        "tooltip": "",
+        "warning": "",
+        "timePercent": 100.0,
+        "valuePercent": 100.0,
+        "characteristicType": 1
+      },
+      {
+        "caption": "Time in <b>3</b> Vectorized Loops",
+        "value": "0.18s",
+        "tooltip": "",
+        "warning": "Time spent in vectorized loops is noticeably less than in scalar loops. Suggestion: introduce more vector parallelism using OpenMP* or other vectorization methods - explore the Performance Issues and Why no Vectorization columns in the Survey report. ",
+        "timePercent": 4.30621979665072,
+        "valuePercent": 4.30621979665072,
+        "characteristicType": 1
+      },
+      {
+        "caption": "Time in scalar code",
+        "value": "4.00s",
+        "tooltip": "",
+        "warning": "",
+        "timePercent": 95.69378020334929,
+        "valuePercent": 95.69378020334929,
+        "characteristicType": 1
+      }
+    ],
+    "efficiencyDescription": {
+      "tooltip": "Consider rebuilding your application with Intel Compiler 16.0 and higher"
+    },
+    "efficiency": "",
+    "summaryMetrics": {
+      "ProgramTime": 0.1811184211,
+      "ElapsedTime": 0.1811184211,
+      "ElapsedTimeMKL": 0.0,
+      "PausedTime": 0.0,
+      "WasPausing": false,
+      "CPUThreads": 32,
+      "ISAUsed": "SSE2, SSE",
+      "HasVNNI": false,
+      "CompilerMajorVersion": -1,
+      "VectorizedLoopsCount": 3,
+      "FullyUnrolledCount": 0,
+      "TotalCPUTime": 4.179999999999998,
+      "TotalCPUTimeMKL": 0.0,
+      "TimeInVectorizedLoops": 0.17999998749999999,
+      "TimeInVectorizedLoopsMKL": 0.0,
+      "TimeInScalarLoops": 3.990000012499998,
+      "TimeInScalarLoopsMKL": 0.0,
+      "TimeOutsideOfAnyLoop": 0.01,
+      "TimeOutsideOfAnyLoopMKL": 0.0,
+      "VectorizationGain": false,
+      "ProgramGain": 0.0,
+      "VectorizedLoopsGain": 0.0,
+      "EfficiencyConfidence": false,
+      "ProgramEfficiency": 0.0,
+      "VectorizedLoopsEfficiency": 0.0,
+      "ReferenceEfficiency": 0.0,
+      "ReferenceProgramEfficiency": 0.0,
+      "TotalGFLOPCount": 1.1594471289999997,
+      "TotalGFLOPCountMKL": 0.0,
+      "TotalGFLOPS": 6.401596932869904,
+      "TotalGFLOPSMKL": 0.0,
+      "TotalFloatAI": 0.09498344615521134,
+      "TotalGINTOPCount": 1.2981538040000003,
+      "TotalGINTOPCountMKL": 0.0,
+      "TotalGINTOPS": 7.167431099033583,
+      "TotalGINTOPSMKL": 0.0,
+      "TotalIntAI": 0.10634648088676827,
+      "TotalGMixedOPCount": 2.457600933,
+      "TotalGMixedOPCountMKL": 0.0,
+      "TotalGMixedOPS": 13.569028031903488,
+      "TotalGMixedOPSMKL": 0.0,
+      "TotalMixedAI": 0.20132992704197964,
+      "FLOPSfeatureOn": true,
+      "HasMKL": false,
+      "MKLUserMode": true,
+      "GpuTime": 0.0,
+      "GpuTotalDataTransferTime": 0.0,
+      "GpuEUActive": 0.0,
+      "GpuEUStalled": 0.0,
+      "GpuEUIdle": 0.0,
+      "GpuFLOPSfeatureOn": false,
+      "GpuTotalGFLOPS": 0.0,
+      "GpuTotalGINTOPS": 0.0,
+      "GpuTermSuffix": ""
+    },
+    "roofItems": [
+      {
+        "bandwidth": 0.0,
+        "name": "DRAM Bandwidth (single node)",
+        "types": {
+          "multiThreaded": true,
+          "memory": true
+        }
+      },
+      {
+        "bandwidth": 0.0,
+        "name": "DRAM Bandwidth",
+        "types": {
+          "multiThreaded": true,
+          "memory": true
+        }
+      },
+      {
+        "bandwidth": 12.995227287,
+        "name": "DRAM Bandwidth (single-threaded)",
+        "types": {
+          "singleThreaded": true,
+          "memory": true
+        }
+      },
+      {
+        "bandwidth": 6310.332004260001,
+        "name": "L1 Bandwidth",
+        "types": {
+          "multiThreaded": true,
+          "memory": true
+        }
+      },
+      {
+        "bandwidth": 1313.5559373600002,
+        "name": "Scalar L1 Bandwidth",
+        "types": {
+          "multiThreaded": true,
+          "memory": true
+        }
+      },
+      {
+        "bandwidth": 315.516600213,
+        "name": "L1 Bandwidth (single-threaded)",
+        "types": {
+          "singleThreaded": true,
+          "memory": true
+        }
+      },
+      {
+        "bandwidth": 65.677796868,
+        "name": "Scalar L1 Bandwidth (single-threaded)",
+        "types": {
+          "singleThreaded": true,
+          "memory": true
+        }
+      },
+      {
+        "bandwidth": 1700.6061425,
+        "name": "L2 Bandwidth",
+        "types": {
+          "multiThreaded": true,
+          "memory": true
+        }
+      },
+      {
+        "bandwidth": 509.67277642000007,
+        "name": "Scalar L2 Bandwidth",
+        "types": {
+          "multiThreaded": true,
+          "memory": true
+        }
+      },
+      {
+        "bandwidth": 85.03030712500001,
+        "name": "L2 Bandwidth (single-threaded)",
+        "types": {
+          "singleThreaded": true,
+          "memory": true
+        }
+      },
+      {
+        "bandwidth": 25.483638821000004,
+        "name": "Scalar L2 Bandwidth (single-threaded)",
+        "types": {
+          "singleThreaded": true,
+          "memory": true
+        }
+      },
+      {
+        "bandwidth": 711.51670102,
+        "name": "L3 Bandwidth",
+        "types": {
+          "multiThreaded": true,
+          "memory": true
+        }
+      },
+      {
+        "bandwidth": 474.77769248000006,
+        "name": "Scalar L3 Bandwidth",
+        "types": {
+          "multiThreaded": true,
+          "memory": true
+        }
+      },
+      {
+        "bandwidth": 35.575835051000009,
+        "name": "L3 Bandwidth (single-threaded)",
+        "types": {
+          "singleThreaded": true,
+          "memory": true
+        }
+      },
+      {
+        "bandwidth": 23.738884624,
+        "name": "Scalar L3 Bandwidth (single-threaded)",
+        "types": {
+          "singleThreaded": true,
+          "memory": true
+        }
+      },
+      {
+        "bandwidth": 99.00216920000001,
+        "name": "SP Vector FMA Peak (single-threaded)",
+        "types": {
+          "singleThreaded": true,
+          "compute": true
+        }
+      },
+      {
+        "bandwidth": 49.476586025,
+        "name": "DP Vector FMA Peak (single-threaded)",
+        "types": {
+          "singleThreaded": true,
+          "compute": true
+        }
+      },
+      {
+        "bandwidth": 3.2928780090000004,
+        "name": "Scalar Add Peak (single-threaded)",
+        "types": {
+          "singleThreaded": true,
+          "compute": true
+        }
+      },
+      {
+        "bandwidth": 24.728345384,
+        "name": "SP Vector Add Peak (single-threaded)",
+        "types": {
+          "singleThreaded": true,
+          "compute": true
+        }
+      },
+      {
+        "bandwidth": 12.363426751,
+        "name": "DP Vector Add Peak (single-threaded)",
+        "types": {
+          "singleThreaded": true,
+          "compute": true
+        }
+      },
+      {
+        "bandwidth": 8.113752264,
+        "name": "Integer Scalar Add Peak (single-threaded)",
+        "types": {
+          "singleThreaded": true,
+          "compute": true
+        }
+      },
+      {
+        "bandwidth": 26.341401063000004,
+        "name": "Int64 Vector Add Peak (single-threaded)",
+        "types": {
+          "singleThreaded": true,
+          "compute": true
+        }
+      },
+      {
+        "bandwidth": 52.660877435,
+        "name": "Int32 Vector Add Peak (single-threaded)",
+        "types": {
+          "singleThreaded": true,
+          "compute": true
+        }
+      }
+    ],
+    "memoryTraffic": [
+      {
+        "L1": 12.206833674
+      }
+    ]
+  }
+}

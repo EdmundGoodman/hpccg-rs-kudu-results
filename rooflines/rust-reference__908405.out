@@ -1,0 +1,191 @@
+===== CONFIGURATION =====
+=== CPU ARCHITECTURE ===
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              40
+On-line CPU(s) list: 0-39
+Thread(s) per core:  2
+Core(s) per socket:  10
+Socket(s):           2
+NUMA node(s):        2
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               63
+Model name:          Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+Stepping:            2
+CPU MHz:             2365.889
+CPU max MHz:         3300.0000
+CPU min MHz:         1200.0000
+BogoMIPS:            5200.29
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            25600K
+NUMA node0 CPU(s):   0-9,20-29
+NUMA node1 CPU(s):   10-19,30-39
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti intel_ppin ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm xsaveopt cqm_llc cqm_occup_llc dtherm ida arat pln pts md_clear flush_l1d
+=== SLURM CONFIG ===
+JobId=908405 JobName=rust-referencei18me2t0.sbatch
+   UserId=u2006527(38259) GroupId=dcsugrad(301) MCS_label=N/A
+   Priority=4294685373 Nice=0 Account=ug QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=2-00:00:00 TimeMin=N/A
+   SubmitTime=2024-04-14T13:20:12 EligibleTime=2024-04-14T13:20:12
+   AccrueTime=2024-04-14T13:20:12
+   StartTime=2024-04-14T13:20:33 EndTime=2024-04-16T13:20:33 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-04-14T13:20:33
+   Partition=cpu-batch AllocNode:Sid=kudu:2015639
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=emu-40
+   BatchHost=emu-40
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=1,mem=60000M,node=1,billing=1
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=60000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=MCS Contiguous=0 Licenses=(null) Network=(null)
+   Command=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench/rust-referencei18me2t0.sbatch
+   WorkDir=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench
+   StdErr=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench/results/rooflines/rust-reference__908405.out
+   StdIn=/dev/null
+   StdOut=/dcs/20/u2006527/Desktop/project/hpccg-rs/hpc-multibench/results/rooflines/rust-reference__908405.out
+   Power=
+   NtasksPerTRES:0
+
+=== RUN INSTANTIATION ===
+{args: 50 50 50}
+
+===== BUILD =====
+    Finished release [optimized + debuginfo] target(s) in 0.15s
+ 
+:: initializing oneAPI environment ...
+   slurm_script: BASH_VERSION = 4.4.20(1)-release
+   args: Using "$@" for setvars.sh arguments: 
+:: advisor -- latest
+:: oneAPI environment initialized ::
+ 
+
+===== RUN =====
+advisor: Warning: The Roofline is a special batch mode of data collection. It runs two analyses one by one. There are Survey Analysis and Trip Counts Analysis with FLOP respectively.
+advisor: Starting command line: advisor --collect survey --project-dir ./ -- ./target/release/hpccg-rs 50 50 50
+Intel(R) Advisor Command Line Tool
+Copyright (C) 2009-2024 Intel Corporation. All rights reserved.
+advisor: Collection started. To stop the collection, either press CTRL-C or enter from another console window: advisor -r /dcs/20/u2006527/Desktop/project/hpccg-rs/5_iterators/e000/hs000 -command stop.
+Initial Residual = +1.28205e3
+Iteration = 15 , Residual = +1.38315e1
+Iteration = 30 , Residual = +3.35846e-2
+Iteration = 45 , Residual = +4.89172e-5
+Iteration = 60 , Residual = +1.81391e-8
+Iteration = 75 , Residual = +1.11558e-11
+Iteration = 90 , Residual = +1.37655e-15
+Iteration = 105 , Residual = +1.85267e-18
+Iteration = 120 , Residual = +6.76787e-22
+Iteration = 135 , Residual = +2.82763e-25
+Iteration = 149 , Residual = +2.21357e-28
+Mini-Application Name: hpccg-iterators
+Mini-Application Version: 1.0
+Parallelism:
+  MPI not enabled:
+  OpenMP not enabled:
+Dimensions:
+  nx: 50
+  ny: 50
+  nz: 50
+Number of iterations: 149
+Final residual: 2.21357e-28
+#********** Performance Summary (times in sec) ***********
+Time Summary:
+  Total: 0.7924
+  DDOT: 0.0382
+  WAXPBY: 0.0684
+  SPARSEMV: 0.6842
+FLOPS Summary:
+  Total: 1192000000
+  DDOT: 74500000
+  WAXPBY: 111750000
+  SPARSEMV: 1005750000
+MFLOPS Summary:
+  Total: 1504.2433
+  DDOT: 1948.7823
+  WAXPBY: 1634.5605
+  SPARSEMV: 1470.0401
+Difference between computed and exact = 2.88658e-15.
+advisor: Collection stopped.
+advisor: Opening result  0 %                                                   advisor: Opening result  0 % Finalizing results                                advisor: Opening result  0 % Finalizing the result                             advisor: Opening result  0 % Clearing the database                             advisor: Opening result 10 % Clearing the database                             advisor: Opening result 10 % Loading raw data to the database                  advisor: Opening result 10 % Loading 'systemcollector-489885-emu-40.sc' file   advisor: Opening result 19 % Loading 'systemcollector-489885-emu-40.sc' file   advisor: Opening result 19 % Loading '489885-489890.0.trace' file              advisor: Opening result 19 % Updating precomputed scalar metrics               advisor: Opening result 21 % Updating precomputed scalar metrics               advisor: Opening result 21 % Processing profile metrics and debug information  advisor: Opening result 21 % Setting data model parameters                     advisor: Opening result 21 % Resolving module symbols                          advisor: Opening result 21 % Resolving information for `libc.so.6'             advisor: Opening result 21 % Resolving information for `hpccg-rs'              
+advisor: Warning: Cannot locate debugging information for file `/lib64/libc.so.6'.
+advisor: Opening result 23 % Resolving information for `hpccg-rs'              advisor: Opening result 25 % Resolving information for `hpccg-rs'              advisor: Opening result 25 % Resolving bottom user stack information           advisor: Opening result 26 % Resolving bottom user stack information           advisor: Opening result 27 % Resolving bottom user stack information           advisor: Opening result 27 % Resolving thread name information                 advisor: Opening result 28 % Resolving thread name information                 advisor: Opening result 28 % Resolving call target names for dynamic code      advisor: Opening result 30 % Resolving call target names for dynamic code      advisor: Opening result 31 % Resolving call target names for dynamic code      advisor: Opening result 31 % Processing profile metrics and debug information  advisor: Opening result 34 % Processing profile metrics and debug information  advisor: Opening result 34 % Setting data model parameters                     advisor: Opening result 35 % Setting data model parameters                     advisor: Opening result 35 % Precomputing frequently used data                 advisor: Opening result 35 % Precomputing frequently used data                 advisor: Opening result 38 % Precomputing frequently used data                 advisor: Opening result 41 % Precomputing frequently used data                 advisor: Opening result 43 % Precomputing frequently used data                 advisor: Opening result 43 % Updating precomputed scalar metrics               advisor: Opening result 45 % Updating precomputed scalar metrics               advisor: Opening result 45 % Discarding redundant overtime data                advisor: Opening result 48 % Discarding redundant overtime data                advisor: Opening result 48 % Saving the result                                 advisor: Opening result 51 % Saving the result                                 advisor: Opening result 53 % Saving the result                                 advisor: Opening result 75 % Saving the result                                 advisor: Opening result 75 % Preparing data for display of survey call tree    advisor: Opening result 75 % Resolving module symbols                          advisor: Opening result 75 % Resolving information for dangling locations      advisor: Opening result 75 % Resolving bottom user stack information           advisor: Opening result 75 % Resolving thread name information                 advisor: Opening result 75 % Resolving call target names for dynamic code      advisor: Opening result 75 % Precomputing frequently used data                 advisor: Opening result 76 % Precomputing frequently used data                 advisor: Opening result 77 % Precomputing frequently used data                 advisor: Opening result 88 % Precomputing frequently used data                 advisor: Opening result 100 % Precomputing frequently used data                advisor: Opening result 100 % done                                             
+advisor: Preparing frequently used data  0 % done                              advisor: Preparing frequently used data  0 % done                              
+advisor: Preparing frequently used data 100 % done                             
+
+Program Elapsed Time: 0.83s
+
+CPU Time: 0.83s
+Time in 3 Vectorized Loops: 0.79s
+
+advisor: Starting command line: advisor --collect tripcounts --project-dir ./ --flop --no-trip-counts -- ./target/release/hpccg-rs 50 50 50
+Intel(R) Advisor Command Line Tool
+Copyright (C) 2009-2024 Intel Corporation. All rights reserved.
+advisor: Opening result  0 %                                                   advisor: Opening result  0 % Preparing data for display of survey call tree    advisor: Opening result  2 % Preparing data for display of survey call tree    advisor: Opening result 25 % Preparing data for display of survey call tree    advisor: Opening result 25 % done                                              
+advisor: Preparing frequently used data  0 % done                              advisor: Preparing frequently used data  0 % done                              
+advisor: Preparing frequently used data 100 % done                             
+advisor: Collection started. To stop the collection, either press CTRL-C or enter from another console window: advisor -r /dcs/20/u2006527/Desktop/project/hpccg-rs/5_iterators/e000/trc000 -command stop.
+Initial Residual = +1.28205e3
+Iteration = 15 , Residual = +1.38315e1
+Iteration = 30 , Residual = +3.35846e-2
+Iteration = 45 , Residual = +4.89172e-5
+Iteration = 60 , Residual = +1.81391e-8
+Iteration = 75 , Residual = +1.11558e-11
+Iteration = 90 , Residual = +1.37655e-15
+Iteration = 105 , Residual = +1.85267e-18
+Iteration = 120 , Residual = +6.76787e-22
+Iteration = 135 , Residual = +2.82763e-25
+Iteration = 149 , Residual = +2.21357e-28
+Mini-Application Name: hpccg-iterators
+Mini-Application Version: 1.0
+Parallelism:
+  MPI not enabled:
+  OpenMP not enabled:
+Dimensions:
+  nx: 50
+  ny: 50
+  nz: 50
+Number of iterations: 149
+Final residual: 2.21357e-28
+#********** Performance Summary (times in sec) ***********
+Time Summary:
+  Total: 1.5869
+  DDOT: 0.0469
+  WAXPBY: 0.1151
+  SPARSEMV: 1.3680
+FLOPS Summary:
+  Total: 1192000000
+  DDOT: 74500000
+  WAXPBY: 111750000
+  SPARSEMV: 1005750000
+MFLOPS Summary:
+  Total: 751.1690
+  DDOT: 1586.8283
+  WAXPBY: 970.4902
+  SPARSEMV: 735.1818
+Difference between computed and exact = 2.88658e-15.
+advisor: Opening result  0 % done                                              advisor: Opening result  0 % Finalizing results                                advisor: Opening result  0 % Finalizing the result                             advisor: Opening result  0 % Loading raw data to the database                  advisor: Opening result  0 % Loading 'bandwidth_1713097243.hpc' file           advisor: Opening result 11 % Loading 'bandwidth_1713097243.hpc' file           advisor: Opening result 11 % Loading 'tripcounts_489984_0.tcs' file            advisor: Opening result 23 % Loading 'tripcounts_489984_0.tcs' file            advisor: Opening result 23 % Updating precomputed scalar metrics               advisor: Opening result 26 % Updating precomputed scalar metrics               advisor: Opening result 26 % Processing profile metrics and debug information  advisor: Opening result 26 % Setting data model parameters                     advisor: Opening result 26 % Resolving module symbols                          advisor: Opening result 26 % Resolving information for dangling locations      advisor: Opening result 28 % Resolving information for dangling locations      advisor: Opening result 41 % Resolving information for dangling locations      advisor: Opening result 41 % Processing profile metrics and debug information  advisor: Opening result 41 % Resolving FLOP information                        advisor: Opening result 45 % Resolving FLOP information                        advisor: Opening result 45 % Processing information for self instruction mix readvisor: Opening result 49 % Processing information for self instruction mix readvisor: Opening result 49 % Calculating function call count                   advisor: Opening result 52 % Calculating function call count                   advisor: Opening result 52 % Processing information for light dynamic instructiadvisor: Opening result 56 % Processing information for light dynamic instructiadvisor: Opening result 56 % Setting data model parameters                     advisor: Opening result 57 % Setting data model parameters                     advisor: Opening result 57 % Precomputing frequently used data                 advisor: Opening result 57 % Precomputing frequently used data                 advisor: Opening result 69 % Precomputing frequently used data                 advisor: Opening result 69 % Updating precomputed scalar metrics               advisor: Opening result 72 % Updating precomputed scalar metrics               advisor: Opening result 72 % Discarding redundant overtime data                advisor: Opening result 75 % Discarding redundant overtime data                advisor: Opening result 75 % Saving the result                                 advisor: Opening result 75 % Preparing data for display of survey call tree    advisor: Opening result 77 % Preparing data for display of survey call tree    advisor: Opening result 88 % Preparing data for display of survey call tree    advisor: Opening result 100 % Preparing data for display of survey call tree   advisor: Opening result 100 % done                                             
+advisor: Preparing frequently used data  0 % done                              advisor: Preparing frequently used data  0 % done                              
+advisor: Preparing frequently used data 100 % done                             
+
+Program Elapsed Time: 0.83s
+
+CPU Time: 0.83s
+Time in 3 Vectorized Loops: 0.79s
+GFLOPS: 1.39
+GINTOPS: 0.76
+
+real 26.15
+user 14.19
+sys 1.19
+===== POST RUN =====
+advisor: Opening result  0 %                                                   advisor: Opening result  0 % Preparing data for display of survey call tree    advisor: Opening result  2 % Preparing data for display of survey call tree    advisor: Opening result 25 % Preparing data for display of survey call tree    advisor: Opening result 25 % done                                              
+advisor: Preparing frequently used data  0 % done                              advisor: Preparing frequently used data  0 % done                              
+advisor: Preparing frequently used data 100 % done                             

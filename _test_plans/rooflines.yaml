@@ -19,7 +19,7 @@ run_configurations:
       - "grep -Po '(?<=\\(){(\"rooflineData\":.*?)(?=}\\)}catch)' cpp-reference_roofline_${SLURM_JOB_ID}.html | sed 's/$/}/' | jq > ./cpp-reference_roofline_${SLURM_JOB_ID}.json"
       # - "advisor --report=roofline --project-dir=./ --report-output=./roofline_${SLURM_JOB_ID}.html"
       # - "grep -Po '(?<=\\(){(\"rooflineData\":.*?)(?=}\\)}catch)' roofline_${SLURM_JOB_ID}.html | sed 's/$/}/' | jq > ./roofline_${SLURM_JOB_ID}.json"
-      - "rm -rf *.advixeproj *.advidb2 e000/"
+      - "rm -rf *.advixeproj *.advidb2 e000/ config/"
 
   "rust-reference":
     sbatch_config:
@@ -40,7 +40,7 @@ run_configurations:
       - "grep -Po '(?<=\\(){(\"rooflineData\":.*?)(?=}\\)}catch)' rust-reference_roofline_${SLURM_JOB_ID}.html | sed 's/$/}/' | jq > ./rust-reference_roofline_${SLURM_JOB_ID}.json"
       # - "advisor --report=roofline --project-dir=./ --report-output=./roofline_${SLURM_JOB_ID}.html"
       # - "grep -Po '(?<=\\(){(\"rooflineData\":.*?)(?=}\\)}catch)' roofline_${SLURM_JOB_ID}.html | sed 's/$/}/' | jq > ./roofline_${SLURM_JOB_ID}.json"
-      - "rm -rf *.advixeproj *.advidb2 e000/"
+      - "rm -rf *.advixeproj *.advidb2 e000/ config/"
 
   "cpp-openmp":
     sbatch_config:
@@ -62,7 +62,7 @@ run_configurations:
       - "grep -Po '(?<=\\(){(\"rooflineData\":.*?)(?=}\\)}catch)' cpp-openmp_roofline_${SLURM_JOB_ID}.html | sed 's/$/}/' | jq > ./cpp-openmp_roofline_${SLURM_JOB_ID}.json"
       # - "advisor --report=roofline --project-dir=./ --report-output=./roofline_${SLURM_JOB_ID}.html"
       # - "grep -Po '(?<=\\(){(\"rooflineData\":.*?)(?=}\\)}catch)' roofline_${SLURM_JOB_ID}.html | sed 's/$/}/' | jq > ./roofline_${SLURM_JOB_ID}.json"
-      - "rm -rf *.advixeproj *.advidb2 e000/"
+      - "rm -rf *.advixeproj *.advidb2 e000/ config/"
 
   "rust-rayon":
     sbatch_config:
@@ -83,7 +83,7 @@ run_configurations:
       - "grep -Po '(?<=\\(){(\"rooflineData\":.*?)(?=}\\)}catch)' rust-rayon_roofline_${SLURM_JOB_ID}.html | sed 's/$/}/' | jq > ./rust-rayon_roofline_${SLURM_JOB_ID}.json"
       # - "advisor --report=roofline --project-dir=./ --report-output=./roofline_${SLURM_JOB_ID}.html"
       # - "grep -Po '(?<=\\(){(\"rooflineData\":.*?)(?=}\\)}catch)' roofline_${SLURM_JOB_ID}.html | sed 's/$/}/' | jq > ./roofline_${SLURM_JOB_ID}.json"
-      - "rm -rf *.advixeproj *.advidb2 e000/"
+      - "rm -rf *.advixeproj *.advidb2 e000/ config/"
 
 benches:
   "rooflines":
