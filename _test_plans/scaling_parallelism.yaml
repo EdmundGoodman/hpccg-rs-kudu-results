@@ -8,7 +8,7 @@ run_configurations:
       "mem": 40000
     module_loads: []
     environment_variables: {}
-    directory: "../0_cpp_versions/1_openmp"
+    directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/0_cpp_versions/1_openmp"
     build_commands:
       - "make no_yaml"
       - "make -j 8"
@@ -23,7 +23,7 @@ run_configurations:
       "mem": 40000
     module_loads: []
     environment_variables: {}
-    directory: "../6_parallel"
+    directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/6_parallel"
     build_commands:
       - "cargo build --release"
     run_command: "./target/release/hpccg-rs"
@@ -35,7 +35,7 @@ run_configurations:
     module_loads:
       - "cs402-mpi"
     environment_variables: {}
-    directory: "../0_cpp_versions/2_mpi"
+    directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/0_cpp_versions/2_mpi"
     build_commands:
       - "make no_yaml"
       - "make -j 8"
@@ -48,7 +48,7 @@ run_configurations:
     module_loads:
       - "cs402-mpi"
     environment_variables: {}
-    directory: "../7_mpi"
+    directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/7_mpi"
     build_commands:
       - "cargo build --release"
     run_command: "mpirun ./target/release/hpccg-rs"

@@ -8,7 +8,7 @@ run_configurations:
       - "cs402-mpi"
     environment_variables:
       "OMP_NUM_THREADS": 2
-    directory: "../0_cpp_versions/3_hybrid"
+    directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/0_cpp_versions/3_hybrid"
     build_commands:
       - "make no_yaml"
       - "make -j 8"
@@ -23,7 +23,7 @@ run_configurations:
       - "cs402-mpi"
     environment_variables:
       "RAYON_NUM_THREADS": 2
-    directory: "../8_hybrid"
+    directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/8_hybrid"
     build_commands:
       - "cargo build --release"
     run_command: "mpirun ./target/release/hpccg-rs"
