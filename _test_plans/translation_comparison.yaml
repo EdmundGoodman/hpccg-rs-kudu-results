@@ -115,21 +115,20 @@ run_configurations:
 
 benches:
   "rust-translations":
-    enabled: False
     run_configurations:
       - "direct"
       - "indexed"
       - "single-indexed"
       - "no-bounds-check"
       - "iterators"
-      # - "parallel"
-      # - "mpi"
-      # - "hybrid"
     reruns:
       number: 5
       highest_discard: 1
       unaggregatable_metrics:
         - "Mesh x size"
+        - "Mesh y size"
+        - "Mesh z size"
+        - "Mesh size"
     matrix:
       args:
         - "50 50 50"
@@ -176,20 +175,22 @@ benches:
       - "parallel"
       - "mpi"
       - "hybrid"
-    # reruns:
-    #   number: 5
-    #   highest_discard: 1
-    #   unaggregatable_metrics:
-    #     - "Mesh x size"
+    reruns:
+      number: 5
+      highest_discard: 1
+      unaggregatable_metrics:
+        - "Mesh x size"
+        - "Mesh y size"
+        - "Mesh z size"
+        - "Mesh size"
     matrix:
       args:
         - "50 50 50"
-        # - "75 75 75"
-        # - "100 100 100"
-        # - "125 125 125"
+        - "75 75 75"
+        - "100 100 100"
+        - "125 125 125"
         - "150 150 150"
         - "175 175 175"
-        - "200 200 200"
     analysis:
       metrics:
         "Mesh x size": "nx: (\\d+)"
@@ -206,6 +207,15 @@ benches:
         - title: "Rust Parallelism Total Times"
           x: "Mesh size"
           y: "Total time (s)"
+        - title: "Rust Parallelism ddot Times"
+          x: "Mesh size"
+          y: "ddot time (s)"
+        - title: "Rust Parallelism waxpby Times"
+          x: "Mesh size"
+          y: "waxpby time (s)"
+        - title: "Rust Parallelism sparsemv Times"
+          x: "Mesh size"
+          y: "sparsemv time (s)"
       bar_charts:
         - title: "Rust Parallelism Total Times"
           x: "Mesh x size"
