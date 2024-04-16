@@ -86,8 +86,8 @@ run_configurations:
   "mpi":
     sbatch_config:
       "nodes": 1
-      "ntasks-per-node": 32
-      "cpus-per-task": 1
+      "ntasks-per-node": 4
+      "cpus-per-task": 2
       "exclusive": "mcs"
       "mem": 60000
     module_loads:
@@ -102,7 +102,7 @@ run_configurations:
     sbatch_config:
       "nodes": 2
       "ntasks-per-node": 2
-      "cpus-per-task": 16
+      "cpus-per-task": 20
       "exclusive": "mcs"
       "mem": 60000
     module_loads:
@@ -115,15 +115,16 @@ run_configurations:
 
 benches:
   "rust-translations":
+    enabled: False
     run_configurations:
       - "direct"
       - "indexed"
       - "single-indexed"
       - "no-bounds-check"
       - "iterators"
-      - "parallel"
-      - "mpi"
-      - "hybrid"
+      # - "parallel"
+      # - "mpi"
+      # - "hybrid"
     reruns:
       number: 5
       highest_discard: 1
@@ -139,8 +140,75 @@ benches:
     analysis:
       metrics:
         "Mesh x size": "nx: (\\d+)"
+        "Mesh y size": "ny: (\\d+)"
+        "Mesh z size": "nz: (\\d+)"
+        "Total time (s)": "Time Summary:[\\s\\S]*Total\\s*: ([\\d\\.]+)[\\s\\S]*\nFLOPS Summary"
+        "ddot time (s)": "Time Summary:[\\s\\S]*DDOT\\s*: ([\\d\\.]+)[\\s\\S]*\nFLOPS Summary"
+        "waxpby time (s)": "Time Summary:[\\s\\S]*WAXPBY\\s*: ([\\d\\.]+)[\\s\\S]*\nFLOPS Summary"
+        "sparsemv time (s)": "Time Summary:[\\s\\S]*SPARSEMV\\s*: ([\\d\\.]+)[\\s\\S]*\nFLOPS Summary"
         "Wall time (s)": "real\\s([\\d\\.]+)\nuser"
+      derived_metrics:
+        "Mesh size": "float(metrics['Mesh x size']) * float(metrics['Mesh y size']) * float(metrics['Mesh z size'])"
       line_plots:
-        - title: "Serial Implementation Comparison"
+        - title: "Rust Translations Total Times"
+          x: "Mesh size"
+          y: "Total time (s)"
+        - title: "Rust Translations ddot Times"
+          x: "Mesh size"
+          y: "ddot time (s)"
+        - title: "Rust Translations waxpby Times"
+          x: "Mesh size"
+          y: "waxpby time (s)"
+        - title: "Rust Translations sparsemv Times"
+          x: "Mesh size"
+          y: "sparsemv time (s)"
+      bar_charts:
+        - title: "Rust Translations Total Times"
+          x: "Mesh size"
+          y: "Total time (s)"
+          fix_metrics:
+            "Mesh x size": "250"
+
+
+  "rust-parallelism":
+    run_configurations:
+      - "iterators"
+      - "parallel"
+      - "mpi"
+      - "hybrid"
+    # reruns:
+    #   number: 5
+    #   highest_discard: 1
+    #   unaggregatable_metrics:
+    #     - "Mesh x size"
+    matrix:
+      args:
+        - "50 50 50"
+        # - "75 75 75"
+        # - "100 100 100"
+        # - "125 125 125"
+        - "150 150 150"
+        - "175 175 175"
+        - "200 200 200"
+    analysis:
+      metrics:
+        "Mesh x size": "nx: (\\d+)"
+        "Mesh y size": "ny: (\\d+)"
+        "Mesh z size": "nz: (\\d+)"
+        "Total time (s)": "Time Summary:[\\s\\S]*Total\\s*: ([\\d\\.]+)[\\s\\S]*\nFLOPS Summary"
+        "ddot time (s)": "Time Summary:[\\s\\S]*DDOT\\s*: ([\\d\\.]+)[\\s\\S]*\nFLOPS Summary"
+        "waxpby time (s)": "Time Summary:[\\s\\S]*WAXPBY\\s*: ([\\d\\.]+)[\\s\\S]*\nFLOPS Summary"
+        "sparsemv time (s)": "Time Summary:[\\s\\S]*SPARSEMV\\s*: ([\\d\\.]+)[\\s\\S]*\nFLOPS Summary"
+        "Wall time (s)": "real\\s([\\d\\.]+)\nuser"
+      derived_metrics:
+        "Mesh size": "float(metrics['Mesh x size']) * float(metrics['Mesh y size']) * float(metrics['Mesh z size'])"
+      line_plots:
+        - title: "Rust Parallelism Total Times"
+          x: "Mesh size"
+          y: "Total time (s)"
+      bar_charts:
+        - title: "Rust Parallelism Total Times"
           x: "Mesh x size"
-          y: "Wall time (s)"
+          y: "Total time (s)"
+          fix_metrics:
+            "Mesh x size": "150"
