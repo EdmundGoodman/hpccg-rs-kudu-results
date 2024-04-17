@@ -1,0 +1,106 @@
+===== CONFIGURATION =====
+=== CPU ARCHITECTURE ===
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              40
+On-line CPU(s) list: 0-39
+Thread(s) per core:  2
+Core(s) per socket:  10
+Socket(s):           2
+NUMA node(s):        2
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               63
+Model name:          Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+Stepping:            2
+CPU MHz:             1612.850
+CPU max MHz:         3300.0000
+CPU min MHz:         1200.0000
+BogoMIPS:            5200.02
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            25600K
+NUMA node0 CPU(s):   0-9,20-29
+NUMA node1 CPU(s):   10-19,30-39
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti intel_ppin ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm xsaveopt cqm_llc cqm_occup_llc dtherm ida arat pln pts md_clear flush_l1d
+=== SLURM CONFIG ===
+JobId=917207 JobName=indexedtxprr8e2.sbatch
+   UserId=u2006527(38259) GroupId=dcsugrad(301) MCS_label=N/A
+   Priority=4294681975 Nice=0 Account=ug QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=2-00:00:00 TimeMin=N/A
+   SubmitTime=2024-04-17T00:07:28 EligibleTime=2024-04-17T00:07:32
+   AccrueTime=2024-04-17T00:07:32
+   StartTime=2024-04-17T00:26:06 EndTime=2024-04-19T00:26:06 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-04-17T00:26:06
+   Partition=cpu-batch AllocNode:Sid=kudu:153991
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=emu-31
+   BatchHost=emu-31
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=1,mem=60000M,node=1,billing=1
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=60000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=MCS Contiguous=0 Licenses=(null) Network=(null)
+   Command=/dcs/20/u2006527/Desktop/project/hpc-multibench/indexedtxprr8e2.sbatch
+   WorkDir=/dcs/20/u2006527/Desktop/project/hpc-multibench
+   StdErr=/dcs/20/u2006527/Desktop/project/hpc-multibench/results/rust-translations/indexed__917207.out
+   StdIn=/dev/null
+   StdOut=/dcs/20/u2006527/Desktop/project/hpc-multibench/results/rust-translations/indexed__917207.out
+   Power=
+   NtasksPerTRES:0
+
+=== RUN INSTANTIATION ===
+{args: 50 50 50}
+
+===== BUILD =====
+run configuration was pre-built
+
+===== RUN =====
+Initial Residual = +1.28205e3
+Iteration = 15 , Residual = +1.38315e1
+Iteration = 30 , Residual = +3.35846e-2
+Iteration = 45 , Residual = +4.89172e-5
+Iteration = 60 , Residual = +1.81391e-8
+Iteration = 75 , Residual = +1.11558e-11
+Iteration = 90 , Residual = +1.37655e-15
+Iteration = 105 , Residual = +1.85267e-18
+Iteration = 120 , Residual = +6.76787e-22
+Iteration = 135 , Residual = +2.82763e-25
+Iteration = 149 , Residual = +2.21357e-28
+Mini-Application Name: hpccg-indexed
+Mini-Application Version: 1.0
+Parallelism:
+  MPI not enabled:
+  OpenMP not enabled:
+Dimensions:
+  nx: 50
+  ny: 50
+  nz: 50
+Number of iterations: 149
+Final residual: 2.21357e-28
+#********** Performance Summary (times in sec) ***********
+Time Summary:
+  Total: 0.9163
+  DDOT: 0.0360
+  WAXPBY: 0.0972
+  SPARSEMV: 0.7823
+FLOPS Summary:
+  Total: 1192000000
+  DDOT: 74500000
+  WAXPBY: 111750000
+  SPARSEMV: 1005750000
+MFLOPS Summary:
+  Total: 1300.8555
+  DDOT: 2071.0210
+  WAXPBY: 1149.6782
+  SPARSEMV: 1285.5918
+Difference between computed and exact = 2.88658e-15.
+real 0.94
+user 0.92
+sys 0.01

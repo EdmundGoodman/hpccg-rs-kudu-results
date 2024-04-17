@@ -1,0 +1,105 @@
+===== CONFIGURATION =====
+=== CPU ARCHITECTURE ===
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              40
+On-line CPU(s) list: 0-39
+Thread(s) per core:  2
+Core(s) per socket:  10
+Socket(s):           2
+NUMA node(s):        2
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               63
+Model name:          Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+Stepping:            2
+CPU MHz:             3300.000
+CPU max MHz:         3300.0000
+CPU min MHz:         1200.0000
+BogoMIPS:            5200.15
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            25600K
+NUMA node0 CPU(s):   0-9,20-29
+NUMA node1 CPU(s):   10-19,30-39
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti intel_ppin ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm xsaveopt cqm_llc cqm_occup_llc dtherm ida arat pln pts md_clear flush_l1d
+=== SLURM CONFIG ===
+JobId=917463 JobName=cpp-openmpdf0fmg4_.sbatch
+   UserId=u2006527(38259) GroupId=dcsugrad(301) MCS_label=N/A
+   Priority=4294681719 Nice=0 Account=ug QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=2-00:00:00 TimeMin=N/A
+   SubmitTime=2024-04-17T00:27:12 EligibleTime=2024-04-17T00:44:11
+   AccrueTime=2024-04-17T00:44:11
+   StartTime=2024-04-17T00:45:24 EndTime=2024-04-19T00:45:24 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-04-17T00:45:24
+   Partition=cpu-batch AllocNode:Sid=kudu:153991
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=emu-35
+   BatchHost=emu-35
+   NumNodes=1 NumCPUs=32 NumTasks=1 CPUs/Task=32 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=32,mem=60000M,node=1,billing=32
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=*
+   MinCPUsNode=32 MinMemoryNode=60000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=MCS Contiguous=0 Licenses=(null) Network=(null)
+   Command=/dcs/20/u2006527/Desktop/project/hpc-multibench/cpp-openmpdf0fmg4_.sbatch
+   WorkDir=/dcs/20/u2006527/Desktop/project/hpc-multibench
+   StdErr=/dcs/20/u2006527/Desktop/project/hpc-multibench/results/cpp-parallelism/cpp-openmp__917463.out
+   StdIn=/dev/null
+   StdOut=/dcs/20/u2006527/Desktop/project/hpc-multibench/results/cpp-parallelism/cpp-openmp__917463.out
+   Power=
+   NtasksPerTRES:0
+
+=== RUN INSTANTIATION ===
+{args: 75 75 75}
+
+===== BUILD =====
+run configuration was pre-built
+
+===== RUN =====
+Initial Residual = 1952.91
+Iteration = 15   Residual = 24.4146
+Iteration = 30   Residual = 0.146609
+Iteration = 45   Residual = 0.000430696
+Iteration = 60   Residual = 1.53945e-06
+Iteration = 75   Residual = 2.70461e-09
+Iteration = 90   Residual = 4.15646e-12
+Iteration = 105   Residual = 8.25129e-15
+Iteration = 120   Residual = 8.94513e-18
+Iteration = 135   Residual = 8.46797e-21
+Iteration = 149   Residual = 3.59772e-23
+Mini-Application Name: hpccg
+Mini-Application Version: 1.0
+Parallelism: 
+  MPI not enabled: 
+  Number of OpenMP threads: 32
+Dimensions: 
+  nx: 75
+  ny: 75
+  nz: 75
+Number of iterations: 149
+Final residual: 3.59772e-23
+#********** Performance Summary (times in sec) ***********: 
+Time Summary: 
+  Total   : 0.912427
+  DDOT    : 0.022756
+  WAXPBY  : 0.048673
+  SPARSEMV: 0.837577
+FLOPS Summary: 
+  Total   : 4.023e+09
+  DDOT    : 2.51438e+08
+  WAXPBY  : 3.77156e+08
+  SPARSEMV: 3.39441e+09
+MFLOPS Summary: 
+  Total   : 4409.12
+  DDOT    : 11049.3
+  WAXPBY  : 7748.78
+  SPARSEMV: 4052.65
+real 0.99
+user 24.37
+sys 0.11

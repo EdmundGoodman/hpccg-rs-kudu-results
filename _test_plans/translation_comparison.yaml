@@ -173,7 +173,6 @@ run_configurations:
 
 benches:
   "rust-translations":
-    enabled: False
     run_configurations:
       - "direct"
       - "indexed"
@@ -229,7 +228,6 @@ benches:
 
 
   "rust-parallelism":
-    enabled: False
     run_configurations:
       - "iterators"
       - "parallel"

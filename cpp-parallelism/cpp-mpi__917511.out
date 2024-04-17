@@ -1,0 +1,129 @@
+===== CONFIGURATION =====
+=== MODULE LOADS ===
+Loading cs402-mpi
+  Loading requirement: gcc9
+=== CPU ARCHITECTURE ===
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              40
+On-line CPU(s) list: 0-39
+Thread(s) per core:  2
+Core(s) per socket:  10
+Socket(s):           2
+NUMA node(s):        2
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               63
+Model name:          Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+Stepping:            2
+CPU MHz:             3300.000
+CPU max MHz:         3300.0000
+CPU min MHz:         1200.0000
+BogoMIPS:            5200.19
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            25600K
+NUMA node0 CPU(s):   0-9,20-29
+NUMA node1 CPU(s):   10-19,30-39
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti intel_ppin ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm xsaveopt cqm_llc cqm_occup_llc dtherm ida arat pln pts md_clear flush_l1d
+=== SLURM CONFIG ===
+JobId=917511 JobName=cpp-mpim1tow3xx.sbatch
+   UserId=u2006527(38259) GroupId=dcsugrad(301) MCS_label=N/A
+   Priority=4294681671 Nice=0 Account=ug QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=2-00:00:00 TimeMin=N/A
+   SubmitTime=2024-04-17T00:27:14 EligibleTime=2024-04-17T00:44:17
+   AccrueTime=2024-04-17T00:44:17
+   StartTime=2024-04-17T00:47:14 EndTime=2024-04-19T00:47:14 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-04-17T00:47:14
+   Partition=cpu-batch AllocNode:Sid=kudu:153991
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=emu-34
+   BatchHost=emu-34
+   NumNodes=1 NumCPUs=2 NumTasks=1 CPUs/Task=2 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=2,mem=60000M,node=1,billing=2
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=2 MinMemoryNode=60000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=MCS Contiguous=0 Licenses=(null) Network=(null)
+   Command=/dcs/20/u2006527/Desktop/project/hpc-multibench/cpp-mpim1tow3xx.sbatch
+   WorkDir=/dcs/20/u2006527/Desktop/project/hpc-multibench
+   StdErr=/dcs/20/u2006527/Desktop/project/hpc-multibench/results/cpp-parallelism/cpp-mpi__917511.out
+   StdIn=/dev/null
+   StdOut=/dcs/20/u2006527/Desktop/project/hpc-multibench/results/cpp-parallelism/cpp-mpi__917511.out
+   Power=
+   NtasksPerTRES:0
+
+=== RUN INSTANTIATION ===
+{args: 175 175 175}
+
+===== BUILD =====
+run configuration was pre-built
+
+===== RUN =====
+--------------------------------------------------------------------------
+WARNING: There is at least non-excluded one OpenFabrics device found,
+but there are no active ports detected (or Open MPI was unable to use
+them).  This is most certainly not what you wanted.  Check your
+cables, subnet manager configuration, etc.  The openib BTL will be
+ignored for this job.
+
+  Local host: emu-34
+--------------------------------------------------------------------------
+Initial Residual = 4865.16
+Iteration = 15   Residual = 66.9162
+Iteration = 30   Residual = 0.451585
+Iteration = 45   Residual = 0.00304852
+Iteration = 60   Residual = 2.03462e-05
+Iteration = 75   Residual = 1.31498e-07
+Iteration = 90   Residual = 4.17571e-10
+Iteration = 105   Residual = 3.07609e-12
+Iteration = 120   Residual = 1.87077e-14
+Iteration = 135   Residual = 1.11177e-16
+Iteration = 149   Residual = 8.47662e-19
+Mini-Application Name: hpccg
+Mini-Application Version: 1.0
+Parallelism: 
+  Number of MPI ranks: 1
+  OpenMP not enabled: 
+Dimensions: 
+  nx: 175
+  ny: 175
+  nz: 175
+Number of iterations: 149
+Final residual: 8.47662e-19
+#********** Performance Summary (times in sec) ***********: 
+Time Summary: 
+  Total   : 29.4204
+  DDOT    : 1.80315
+  WAXPBY  : 3.18421
+  SPARSEMV: 24.4312
+FLOPS Summary: 
+  Total   : 5.1107e+10
+  DDOT    : 3.19419e+09
+  WAXPBY  : 4.79128e+09
+  SPARSEMV: 4.31215e+10
+MFLOPS Summary: 
+  Total   : 1737.13
+  DDOT    : 1771.45
+  WAXPBY  : 1504.7
+  SPARSEMV: 1765.02
+DDOT Timing Variations: 
+  Min DDOT MPI_Allreduce time: 0.000537939
+  Max DDOT MPI_Allreduce time: 0.000537939
+  Avg DDOT MPI_Allreduce time: 0.000537939
+SPARSEMV OVERHEADS: 
+  SPARSEMV MFLOPS W OVERHEAD: 1744.92
+  SPARSEMV PARALLEL OVERHEAD Time: 0.281369
+  SPARSEMV PARALLEL OVERHEAD Pct: 1.13857
+  SPARSEMV PARALLEL OVERHEAD Setup Time: 0.280896
+  SPARSEMV PARALLEL OVERHEAD Setup Pct: 1.13665
+  SPARSEMV PARALLEL OVERHEAD Bdry Exch Time: 0.0004735
+  SPARSEMV PARALLEL OVERHEAD Bdry Exch Pct: 0.00191603
+real 30.57
+user 29.79
+sys 0.48
