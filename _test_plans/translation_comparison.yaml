@@ -10,6 +10,7 @@ run_configurations:
     environment_variables: {}
     directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/1_naive"
     build_commands:
+      - "scc src/"
       - "cargo build --release"
     run_command: "./target/release/hpccg-rs"
 
@@ -24,6 +25,7 @@ run_configurations:
     environment_variables: {}
     directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/2_indexed"
     build_commands:
+      - "scc src/"
       - "cargo build --release"
     run_command: "./target/release/hpccg-rs"
 
@@ -38,6 +40,7 @@ run_configurations:
     environment_variables: {}
     directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/3_single_indexed"
     build_commands:
+      - "scc src/"
       - "cargo build --release"
     run_command: "./target/release/hpccg-rs"
 
@@ -52,6 +55,7 @@ run_configurations:
     environment_variables: {}
     directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/4_no_bounds_check"
     build_commands:
+      - "scc src/"
       - "cargo build --release"
     run_command: "./target/release/hpccg-rs"
 
@@ -66,6 +70,7 @@ run_configurations:
     environment_variables: {}
     directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/5_iterators"
     build_commands:
+      - "scc src/"
       - "cargo build --release"
     run_command: "./target/release/hpccg-rs"
 
@@ -80,6 +85,7 @@ run_configurations:
     environment_variables: {}
     directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/6_parallel"
     build_commands:
+      - "scc src/"
       - "cargo build --release"
     run_command: "./target/release/hpccg-rs"
 
@@ -95,6 +101,7 @@ run_configurations:
     environment_variables: {}
     directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/7_mpi"
     build_commands:
+      - "scc src/"
       - "cargo build --release"
     run_command: "mpirun ./target/release/hpccg-rs"
 
@@ -110,6 +117,7 @@ run_configurations:
     environment_variables: {}
     directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/8_hybrid"
     build_commands:
+      - "scc src/"
       - "cargo build --release"
     run_command: "mpirun ./target/release/hpccg-rs"
 
@@ -125,6 +133,7 @@ run_configurations:
     directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/0_cpp_versions/0_ref"
     build_commands:
       - "make no_yaml"
+      - "scc ./"
       - "make -j 8"
     run_command: "./test_HPCCG"
 
@@ -140,6 +149,7 @@ run_configurations:
     directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/0_cpp_versions/1_openmp"
     build_commands:
       - "make no_yaml"
+      - "scc ./"
       - "make -j 8"
     run_command: "./test_HPCCG"
 
@@ -154,6 +164,7 @@ run_configurations:
     directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/0_cpp_versions/2_mpi"
     build_commands:
       - "make no_yaml"
+      - "scc ./"
       - "make -j 8"
     run_command: "mpirun ./test_HPCCG"
 
@@ -167,6 +178,7 @@ run_configurations:
     directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/0_cpp_versions/3_hybrid"
     build_commands:
       - "make no_yaml"
+      - "scc ./"
       - "make -j 8"
     run_command: "mpirun ./test_HPCCG"
 
@@ -205,7 +217,7 @@ benches:
         "sparsemv time (s)": "Time Summary:[\\s\\S]*SPARSEMV\\s*: ([\\d\\.]+)[\\s\\S]*\nFLOPS Summary"
         "Wall time (s)": "real\\s([\\d\\.]+)\nuser"
       derived_metrics:
-        "Mesh size": "float(metrics['Mesh x size']) * float(metrics['Mesh y size']) * float(metrics['Mesh z size'])"
+        "Mesh size": "int(metrics['Mesh x size']) * int(metrics['Mesh y size']) * int(metrics['Mesh z size'])"
       line_plots:
         - title: "Rust Translations Total Times"
           x: "Mesh size"
@@ -260,7 +272,7 @@ benches:
         "sparsemv time (s)": "Time Summary:[\\s\\S]*SPARSEMV\\s*: ([\\d\\.]+)[\\s\\S]*\nFLOPS Summary"
         "Wall time (s)": "real\\s([\\d\\.]+)\nuser"
       derived_metrics:
-        "Mesh size": "float(metrics['Mesh x size']) * float(metrics['Mesh y size']) * float(metrics['Mesh z size'])"
+        "Mesh size": "int(metrics['Mesh x size']) * int(metrics['Mesh y size']) * int(metrics['Mesh z size'])"
       line_plots:
         - title: "Rust Parallelism Total Times"
           x: "Mesh size"
@@ -315,7 +327,7 @@ benches:
         "sparsemv time (s)": "Time Summary:[\\s\\S]*SPARSEMV\\s*: ([\\d\\.]+)[\\s\\S]*\nFLOPS Summary"
         "Wall time (s)": "real\\s([\\d\\.]+)\nuser"
       derived_metrics:
-        "Mesh size": "float(metrics['Mesh x size']) * float(metrics['Mesh y size']) * float(metrics['Mesh z size'])"
+        "Mesh size": "int(metrics['Mesh x size']) * int(metrics['Mesh y size']) * int(metrics['Mesh z size'])"
       line_plots:
         - title: "C++ Parallelism Total Times"
           x: "Mesh size"
@@ -332,6 +344,54 @@ benches:
       bar_charts:
         - title: "C++ Parallelism Total Times"
           x: "Mesh x size"
+          y: "Total time (s)"
+          fix_metrics:
+            "Mesh x size": "150"
+
+
+  "performance-cost":
+    run_configurations:
+      - "iterators"
+      - "parallel"
+      - "mpi"
+      - "cpp-reference"
+      - "cpp-openmp"
+      - "cpp-mpi"
+    reruns:
+      number: 5
+      highest_discard: 1
+      unaggregatable_metrics:
+        - "Mesh x size"
+        - "Mesh y size"
+        - "Mesh z size"
+        - "Mesh size"
+    matrix:
+      args:
+        - "50 50 50"
+        - "100 100 100"
+        - "150 150 150"
+    analysis:
+      metrics:
+        "Mesh x size": "nx: (\\d+)"
+        "Mesh y size": "ny: (\\d+)"
+        "Mesh z size": "nz: (\\d+)"
+        "Total time (s)": "Time Summary:[\\s\\S]*Total\\s*: ([\\d\\.]+)[\\s\\S]*\nFLOPS Summary"
+        "ddot time (s)": "Time Summary:[\\s\\S]*DDOT\\s*: ([\\d\\.]+)[\\s\\S]*\nFLOPS Summary"
+        "waxpby time (s)": "Time Summary:[\\s\\S]*WAXPBY\\s*: ([\\d\\.]+)[\\s\\S]*\nFLOPS Summary"
+        "sparsemv time (s)": "Time Summary:[\\s\\S]*SPARSEMV\\s*: ([\\d\\.]+)[\\s\\S]*\nFLOPS Summary"
+        "Wall time (s)": "real\\s([\\d\\.]+)\nuser"
+      derived_metrics:
+        "Mesh size": "int(metrics['Mesh x size']) * int(metrics['Mesh y size']) * int(metrics['Mesh z size'])"
+        "Estimated development cost": "Estimated Cost to Develop \\(organic\\) \\$([\\d,]+)"
+        "Estimated development time": "Estimated Schedule Effort \\(organic\\) ([\\d\\.]+) months"
+      line_plots:
+        - title: "Cost / Performance Plot"
+          x: "Estimated development cost"
+          y: "Total time (s)"
+          fix_metrics:
+            "Mesh x size": "150"
+        - title: "Development Time / Cost Plot"
+          x: "Estimated development cost"
           y: "Total time (s)"
           fix_metrics:
             "Mesh x size": "150"
