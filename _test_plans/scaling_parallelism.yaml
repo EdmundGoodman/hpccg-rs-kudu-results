@@ -82,10 +82,17 @@ benches:
         "Total FLOPs": "FLOPS Summary:[\\s\\S]*Total\\s*: ([\\d\\.eE\\-+]+)[\\s\\S]*\nMFLOPS Summary"
         "Total MFLOPs/s": "MFLOPS Summary:[\\s\\S]*Total\\s*: ([\\d\\.]+)"
         "Parallelisation degree": "=== RUN INSTANTIATION ===\n\\{.*environment_variables: \\{.*OMP_NUM_THREADS: (\\d+).*\\}"
+      derived_metrics:
+        "Total speedup": "_sequential_metrics[0]['Total time (s)'] / metrics['Total time (s)']"
       line_plots:
         - title: "Multi-threaded Strong Scaling Plot"
           x: "Parallelisation degree"
           y: "Wall time (s)"
+          y_lim: 0
+        - title: "Multi-threaded Strong Scaling Speedup Plot"
+          x: "Parallelisation degree"
+          y: "Total speedup"
+          y_lim: 0
 
   "weak-scaling-threaded":
     run_configurations:
@@ -117,15 +124,31 @@ benches:
         "Total FLOPs": "FLOPS Summary:[\\s\\S]*Total\\s*: ([\\d\\.eE\\-+]+)[\\s\\S]*\nMFLOPS Summary"
         "Total MFLOPs/s": "MFLOPS Summary:[\\s\\S]*Total\\s*: ([\\d\\.]+)"
         "Parallelisation degree": "=== RUN INSTANTIATION ===\n\\{.*environment_variables: \\{.*OMP_NUM_THREADS: (\\d+).*\\}"
+      derived_metrics:
+        "Total speedup": "_sequential_metrics[0]['Total time (s)'] / metrics['Total time (s)']"
       line_plots:
         - title: "Multi-threaded Weak Scaling Plot"
           x: "Parallelisation degree"
           y: "Wall time (s)"
+          y_lim: 0
+          fix_metrics:
+            "Mesh x size": 64
+        - title: "Multi-threaded Weak Scaling Speedup Plot"
+          x: "Parallelisation degree"
+          y: "Total speedup"
+          y_lim: 0
           fix_metrics:
             "Mesh x size": 64
         - title: "Multi-threaded Weak Scaling Plot"
           x: "Parallelisation degree"
           y: "Wall time (s)"
+          y_lim: 0
+          fix_metrics:
+            "Mesh x size": 200
+        - title: "Multi-threaded Weak Scaling Speedup Plot"
+          x: "Parallelisation degree"
+          y: "Total speedup"
+          y_lim: 0
           fix_metrics:
             "Mesh x size": 200
 
@@ -161,10 +184,17 @@ benches:
         "Parallelisation degree": "=== RUN INSTANTIATION ===\n\\{.*sbatch_config: \\{.*ntasks: (\\d+).*\\}"
         "MPI Rank": "Parallelism:[\\s\\S]*Number of MPI ranks: (\\d*)"
         "MPI Nodes": "=== SLURM CONFIG ===[\\s\\S]*\ \ \ NumNodes=(\\d*)\ NumCPUs"
+      derived_metrics:
+        "Total speedup": "_sequential_metrics[0]['Total time (s)'] / metrics['Total time (s)']"
       line_plots:
         - title: "Message Passing Strong Scaling Plot"
           x: "Parallelisation degree"
-          y: "Wall time (s)"
+          y: "Total time (s)"
+          y_lim: 0
+        - title: "Message Passing Strong Scaling Speedup Plot"
+          x: "Parallelisation degree"
+          y: "Total speedup"
+          y_lim: 0
 
   "weak-scaling-message-passing":
     run_configurations:
@@ -198,14 +228,30 @@ benches:
         "Parallelisation degree": "=== RUN INSTANTIATION ===\n\\{.*sbatch_config: \\{.*ntasks: (\\d+).*\\}"
         "MPI Rank": "Parallelism:[\\s\\S]*Number of MPI ranks: (\\d*)"
         "MPI Nodes": "=== SLURM CONFIG ===[\\s\\S]*\ \ \ NumNodes=(\\d*)\ NumCPUs"
+      derived_metrics:
+        "Total speedup": "_sequential_metrics[0]['Total time (s)'] / metrics['Total time (s)']"
       line_plots:
         - title: "Message Passing Weak Scaling Plot"
           x: "Parallelisation degree"
-          y: "Wall time (s)"
+          y: "Total time (s)"
+          y_lim: [0, 5]
+          fix_metrics:
+            "Mesh x size": 64
+        - title: "Message Passing Weak Scaling Speedup Plot"
+          x: "Parallelisation degree"
+          y: "Total speedup"
+          y_lim: [0.9, 1.1]
           fix_metrics:
             "Mesh x size": 64
         - title: "Message Passing Weak Scaling Plot"
           x: "Parallelisation degree"
-          y: "Wall time (s)"
+          y: "Total time (s)"
+          y_lim: [0, 120]
+          fix_metrics:
+            "Mesh x size": 200
+        - title: "Message Passing Weak Scaling Speedup Plot"
+          x: "Parallelisation degree"
+          y: "Total speedup"
+          y_lim: [0, 0.05]
           fix_metrics:
             "Mesh x size": 200
