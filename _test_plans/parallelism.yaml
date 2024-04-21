@@ -266,12 +266,14 @@ benches:
         - "Tasks"
     matrix:
       args:
+        - "25 25 25"
+        - "50 50 50"
         - "100 100 100"
         - "200 200 200"
         - "300 300 300"
         - "400 400 400"
       sbatch_config:
-        - { "nodes": 2, "ntasks-per-node": 16 }
+        - { "nodes": 2, "ntasks-per-node": 2 }
     analysis:
       metrics:
         "Mesh x size": "nx: (\\d+)"
@@ -323,14 +325,16 @@ benches:
         - "Threads"
     matrix:
       args:
+        - "25 25 25"
+        - "50 50 50"
         - "100 100 100"
         - "200 200 200"
         - "300 300 300"
         - "400 400 400"
       [sbatch_config, environment_variables]:
         - [
-            { "nodes": 2, "ntasks-per-node": 1, "cpus-per-task": 40 },
-            { "OMP_NUM_THREADS": 40, "RAYON_NUM_THREADS": 40 },
+            { "nodes": 2, "ntasks-per-node": 1, "cpus-per-task": 32 },
+            { "OMP_NUM_THREADS": 32, "RAYON_NUM_THREADS": 32 },
           ]
     analysis:
       metrics:
