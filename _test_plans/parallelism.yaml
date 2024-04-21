@@ -271,9 +271,7 @@ benches:
         - "300 300 300"
         - "400 400 400"
       sbatch_config:
-        - { "nodes": 2, "ntasks-per-node": 1 }
-        - { "nodes": 2, "ntasks-per-node": 2 }
-        - { "nodes": 2, "ntasks-per-node": 4 }
+        - { "nodes": 2, "ntasks-per-node": 16 }
     analysis:
       metrics:
         "Mesh x size": "nx: (\\d+)"
@@ -306,7 +304,7 @@ benches:
             - "Nodes"
             - "Tasks"
           fix_metrics:
-            "Mesh x size": "400"
+            "Mesh x size": "300"
 
   "hybrid":
     run_configurations:
@@ -327,12 +325,12 @@ benches:
       args:
         - "100 100 100"
         - "200 200 200"
+        - "300 300 300"
         - "400 400 400"
-        - "600 600 600"
       [sbatch_config, environment_variables]:
         - [
-            { "nodes": 4, "ntasks-per-node": 1, "cpus-per-task": 32 },
-            { "OMP_NUM_THREADS": 32, "RAYON_NUM_THREADS": 32 },
+            { "nodes": 2, "ntasks-per-node": 1, "cpus-per-task": 40 },
+            { "OMP_NUM_THREADS": 40, "RAYON_NUM_THREADS": 40 },
           ]
     analysis:
       metrics:
@@ -362,7 +360,7 @@ benches:
         - title: "MPI & Multi-Threading Implementation Comparison"
           y: "Total time (s)"
           fix_metrics:
-            "Mesh x size": "600"
+            "Mesh x size": "300"
 
   "cpp-kokkos-rust-parallel":
     enabled: False
