@@ -97,8 +97,8 @@ run_configurations:
 
   "mpi":
     sbatch_config:
-      "nodes": 1
-      "ntasks-per-node": 4
+      "nodes": 2
+      "ntasks-per-node": 16
       "cpus-per-task": 2
       "exclusive": "mcs"
       "mem": 60000
@@ -165,6 +165,8 @@ run_configurations:
 
   "cpp-mpi":
     sbatch_config:
+      "nodes": 2
+      "ntasks-per-node": 16
       "cpus-per-task": 2
       "exclusive": "mcs"
       "mem": 60000
@@ -181,6 +183,9 @@ run_configurations:
 
   "cpp-hybrid":
     sbatch_config:
+      "nodes": 2
+      "ntasks-per-node": 2
+      "cpus-per-task": 20
       "exclusive": "mcs"
       "mem": 60000
     module_loads:
