@@ -77,7 +77,7 @@ run_configurations:
       "exclusive": "mcs"
       "mem": 60000
     module_loads: []
-    environment_variables: {}
+    environment_variables: { "OMP_NUM_THREADS": 32, "RAYON_NUM_THREADS": 32 }
     directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/6_parallel"
     build_commands:
       - "cargo build --release"
@@ -85,8 +85,8 @@ run_configurations:
 
   "mpi":
     sbatch_config:
-      "nodes": 1
-      "ntasks-per-node": 4
+      "nodes": 2
+      "ntasks-per-node": 2
       "cpus-per-task": 2
       "exclusive": "mcs"
       "mem": 60000
@@ -107,7 +107,7 @@ run_configurations:
       "mem": 60000
     module_loads:
       - "cs402-mpi"
-    environment_variables: {}
+    environment_variables: { "OMP_NUM_THREADS": 20, "RAYON_NUM_THREADS": 20 }
     directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/8_hybrid"
     build_commands:
       - "cargo build --release"
@@ -136,7 +136,7 @@ run_configurations:
       "exclusive": "mcs"
       "mem": 60000
     module_loads: []
-    environment_variables: {}
+    environment_variables: { "OMP_NUM_THREADS": 32, "RAYON_NUM_THREADS": 32 }
     directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/0_cpp_versions/1_openmp"
     build_commands:
       - "make no_yaml"
@@ -145,6 +145,8 @@ run_configurations:
 
   "cpp-mpi":
     sbatch_config:
+      "nodes": 2
+      "ntasks-per-node": 2
       "cpus-per-task": 2
       "exclusive": "mcs"
       "mem": 60000
@@ -159,11 +161,14 @@ run_configurations:
 
   "cpp-hybrid":
     sbatch_config:
+      "nodes": 2
+      "ntasks-per-node": 2
+      "cpus-per-task": 20
       "exclusive": "mcs"
       "mem": 60000
     module_loads:
       - "cs402-mpi"
-    environment_variables: {}
+    environment_variables: { "OMP_NUM_THREADS": 20, "RAYON_NUM_THREADS": 20 }
     directory: "./generated_results/hpccg-rs-kudu-results/hpccg-rs/0_cpp_versions/3_hybrid"
     build_commands:
       - "make no_yaml"
@@ -246,9 +251,9 @@ benches:
         - "50 50 50"
         - "75 75 75"
         - "100 100 100"
-        - "125 125 125"
         - "150 150 150"
-        - "175 175 175"
+        - "200 200 200"
+        - "300 300 300"
     analysis:
       metrics:
         "Mesh x size": "nx: (\\d+)"
@@ -301,9 +306,9 @@ benches:
         - "50 50 50"
         - "75 75 75"
         - "100 100 100"
-        - "125 125 125"
         - "150 150 150"
-        - "175 175 175"
+        - "200 200 200"
+        - "300 300 300"
     analysis:
       metrics:
         "Mesh x size": "nx: (\\d+)"
