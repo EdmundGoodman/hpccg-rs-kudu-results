@@ -215,21 +215,26 @@ benches:
         - title: "Rust Translations Total Times"
           x: "Mesh size"
           y: "Total time (s)"
+          tikz_output: "tikz_outputs/translations/translations_total_line.tex"
         - title: "Rust Translations ddot Times"
           x: "Mesh size"
           y: "ddot time (s)"
+          tikz_output: "tikz_outputs/translations/translations_ddot_line.tex"
         - title: "Rust Translations waxpby Times"
           x: "Mesh size"
           y: "waxpby time (s)"
+          tikz_output: "tikz_outputs/translations/translations_waxpby_line.tex"
         - title: "Rust Translations sparsemv Times"
           x: "Mesh size"
           y: "sparsemv time (s)"
+          tikz_output: "tikz_outputs/translations/translations_sparsemv_line.tex"
       bar_charts:
         - title: "Rust Translations Total Times"
           x: "Mesh size"
           y: "Total time (s)"
           fix_metrics:
             "Mesh x size": "250"
+          enabled: False
 
 
   "rust-parallelism":
@@ -270,21 +275,26 @@ benches:
         - title: "Rust Parallelism Total Times"
           x: "Mesh size"
           y: "Total time (s)"
+          tikz_output: "tikz_outputs/translations/translations_parallelism_rust.tex"
         - title: "Rust Parallelism ddot Times"
           x: "Mesh size"
           y: "ddot time (s)"
+          enabled: False
         - title: "Rust Parallelism waxpby Times"
           x: "Mesh size"
           y: "waxpby time (s)"
+          enabled: False
         - title: "Rust Parallelism sparsemv Times"
           x: "Mesh size"
           y: "sparsemv time (s)"
+          enabled: False
       bar_charts:
         - title: "Rust Parallelism Total Times"
           x: "Mesh x size"
           y: "Total time (s)"
           fix_metrics:
             "Mesh x size": "150"
+          enabled: False
 
 
   "cpp-parallelism":
@@ -325,18 +335,23 @@ benches:
         - title: "C++ Parallelism Total Times"
           x: "Mesh size"
           y: "Total time (s)"
+          tikz_output: "tikz_outputs/translations/translations_parallelism_cpp.tex"
         - title: "C++ Parallelism ddot Times"
           x: "Mesh size"
           y: "ddot time (s)"
+          enabled: False
         - title: "C++ Parallelism waxpby Times"
           x: "Mesh size"
           y: "waxpby time (s)"
+          enabled: False
         - title: "C++ Parallelism sparsemv Times"
           x: "Mesh size"
           y: "sparsemv time (s)"
+          enabled: False
       bar_charts:
         - title: "C++ Parallelism Total Times"
           x: "Mesh x size"
           y: "Total time (s)"
           fix_metrics:
             "Mesh x size": "150"
+          enabled: False

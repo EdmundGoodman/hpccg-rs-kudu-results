@@ -178,17 +178,21 @@ benches:
         - title: "Serial Implementation Comparison"
           x: "Mesh size"
           y: "Total time (s)"
+          tikz_output: "tikz_outputs/parallelism/serial_line.tex"
         - title: "Serial Implementation Relative Execution Times"
           x: "Mesh size"
           y: "Execution time relative to C++"
+          tikz_output: "tikz_outputs/parallelism/serial_relative_line.tex"
         - title: "Serial Implementation Speedup"
           x: "Mesh size"
           y: "Total speedup"
+          enabled: False
       bar_charts:
         - title: "Serial Implementation Comparison"
           y: "Total time (s)"
           fix_metrics:
             "Mesh x size": "300"
+          enabled: False
 
   "multi-threaded":
     run_configurations:
@@ -230,16 +234,19 @@ benches:
           y: "Total time (s)"
           split_metrics:
             - "Num threads"
+          tikz_output: "tikz_outputs/parallelism/parallel_line.tex"
         - title: "Multi-Threaded Implementation Comparison"
           x: "Mesh size"
           y: "Total time (s)"
           fix_metrics:
             "Num threads": 32
+          enabled: False
         - title: "Multi-Threaded Implementation Relative Execution Times"
           x: "Mesh size"
           y: "Execution time relative to C++"
           split_metrics:
             - "Num threads"
+          tikz_output: "tikz_outputs/parallelism/parallel_relative_line.tex"
       bar_charts:
         - title: "Multi-Threaded Implementation Comparison"
           y: "Total time (s)"
@@ -247,6 +254,7 @@ benches:
             - "Num threads"
           fix_metrics:
             "Mesh x size": "400"
+          enabled: False
 
   "mpi":
     run_configurations:
@@ -291,12 +299,14 @@ benches:
           split_metrics:
             - "Nodes"
             - "Tasks"
+          tikz_output: "tikz_outputs/parallelism/mpi_line.tex"
         - title: "MPI Implementation Relative Execution Times"
           x: "Mesh size"
           y: "Execution time relative to C++"
           split_metrics:
             - "Nodes"
             - "Tasks"
+          tikz_output: "tikz_outputs/parallelism/mpi_relative_line.tex"
       bar_charts:
         - title: "MPI Implementation Comparison"
           y: "Total time (s)"
@@ -305,6 +315,7 @@ benches:
             - "Tasks"
           fix_metrics:
             "Mesh x size": "300"
+          enabled: False
 
   "hybrid":
     run_configurations:
@@ -352,17 +363,21 @@ benches:
         - title: "MPI & Multi-Threading Implementation Comparison"
           x: "Mesh size"
           y: "Total time (s)"
+          tikz_output: "tikz_outputs/parallelism/hybrid_line.tex"
         - title: "MPI & Multi-Threading Implementation Relative Execution Times"
           x: "Mesh size"
           y: "Execution time relative to C++"
+          tikz_output: "tikz_outputs/parallelism/hybrid_relative_line.tex"
         - title: "MPI & Multi-Threading Implementation Speedup"
           x: "Mesh size"
           y: "Total speedup"
+          enabled: False
       bar_charts:
         - title: "MPI & Multi-Threading Implementation Comparison"
           y: "Total time (s)"
           fix_metrics:
             "Mesh x size": "300"
+          enabled: False
 
   "cpp-kokkos-rust-parallel":
     run_configurations:
@@ -402,17 +417,21 @@ benches:
         - title: "C++, Kokkos, and Rust with Multi-Threading Version Comparison"
           x: "Mesh size"
           y: "Total time (s)"
+          tikz_output: "tikz_outputs/parallelism/kokkos_line.tex"
         - title: "C++, Kokkos, and Rust with Multi-Threading Relative Execution Times"
           x: "Mesh size"
           y: "Execution time relative to C++"
+          tikz_output: "tikz_outputs/parallelism/kokkos_relative_line.tex"
         - title: "C++, Kokkos, and Rust with Multi-Threading Implementation Speedup"
           x: "Mesh size"
           y: "Total speedup"
+          enabled: False
       bar_charts:
         - title: "C++, Kokkos, and Rust with Multi-Threading Version Comparison"
           y: "Total time (s)"
           fix_metrics:
             "Mesh x size": 400
+          enabled: False
 
   "cpp-kokkos-rust-hybrid":
     enabled: False

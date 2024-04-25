@@ -88,11 +88,13 @@ benches:
         - title: "Multi-threaded Strong Scaling Plot"
           x: "Parallelisation degree"
           y: "Wall time (s)"
-          y_lim: 0
+          # y_lim: 0
+          tikz_output: "tikz_outputs/scaling/strong_scaling_threaded.tex"
         - title: "Multi-threaded Strong Scaling Speedup Plot"
           x: "Parallelisation degree"
           y: "Total speedup"
           y_lim: 0
+          tikz_output: "tikz_outputs/scaling/strong_scaling_speedup_threaded.tex"
 
   "weak-scaling-threaded":
     run_configurations:
@@ -131,12 +133,14 @@ benches:
           x: "Parallelisation degree"
           y: "Wall time (s)"
           y_lim: 0
+          tikz_output: "tikz_outputs/scaling/weak_scaling_threaded.tex"
           fix_metrics:
             "Mesh x size": 64
         - title: "Multi-threaded Weak Scaling Speedup Plot"
           x: "Parallelisation degree"
           y: "Total speedup"
           y_lim: 0
+          tikz_output: "tikz_outputs/scaling/weak_scaling_speedup_threaded.tex"
           fix_metrics:
             "Mesh x size": 64
         - title: "Multi-threaded Weak Scaling Plot"
@@ -145,12 +149,14 @@ benches:
           y_lim: 0
           fix_metrics:
             "Mesh x size": 200
+          enabled: False
         - title: "Multi-threaded Weak Scaling Speedup Plot"
           x: "Parallelisation degree"
           y: "Total speedup"
           y_lim: 0
           fix_metrics:
             "Mesh x size": 200
+          enabled: False
 
 
 
@@ -191,10 +197,12 @@ benches:
           x: "Parallelisation degree"
           y: "Total time (s)"
           y_lim: 0
+          tikz_output: "tikz_outputs/scaling/strong_scaling_mpi.tex"
         - title: "Message Passing Strong Scaling Speedup Plot"
           x: "Parallelisation degree"
           y: "Total speedup"
           y_lim: 0
+          tikz_output: "tikz_outputs/scaling/strong_scaling_speedup_mpi.tex"
 
   "weak-scaling-message-passing":
     run_configurations:
@@ -235,12 +243,14 @@ benches:
           x: "Parallelisation degree"
           y: "Total time (s)"
           y_lim: [0, 5]
+          tikz_output: "tikz_outputs/scaling/weak_scaling_mpi.tex"
           fix_metrics:
             "Mesh x size": 64
         - title: "Message Passing Weak Scaling Speedup Plot"
           x: "Parallelisation degree"
           y: "Total speedup"
           y_lim: [0.9, 1.1]
+          tikz_output: "tikz_outputs/scaling/weak_scaling_speedup_mpi.tex"
           fix_metrics:
             "Mesh x size": 64
         - title: "Message Passing Weak Scaling Plot"
@@ -249,9 +259,11 @@ benches:
           y_lim: [0, 120]
           fix_metrics:
             "Mesh x size": 200
+          enabled: False
         - title: "Message Passing Weak Scaling Speedup Plot"
           x: "Parallelisation degree"
           y: "Total speedup"
           y_lim: [0, 0.05]
           fix_metrics:
             "Mesh x size": 200
+          enabled: False
