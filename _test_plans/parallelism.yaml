@@ -331,8 +331,8 @@ benches:
         - "400 400 400"
       [sbatch_config, environment_variables]:
         - [
-            { "nodes": 2, "ntasks-per-node": 1, "cpus-per-task": 32 },
-            { "OMP_NUM_THREADS": 32, "RAYON_NUM_THREADS": 32 },
+            { "nodes": 2, "ntasks-per-node": 2, "cpus-per-task": 20 },
+            { "OMP_NUM_THREADS": 20, "RAYON_NUM_THREADS": 20 },
           ]
     analysis:
       metrics:
@@ -438,8 +438,8 @@ benches:
         - "250 250 250"
       [sbatch_config, environment_variables]:
         - [
-            { "nodes": 4, "ntasks-per-node": 1, "cpus-per-task": 32 },
-            { "OMP_NUM_THREADS": 32, "RAYON_NUM_THREADS": 32 },
+            { "nodes": 2, "ntasks-per-node": 2, "cpus-per-task": 20 },
+            { "OMP_NUM_THREADS": 20, "RAYON_NUM_THREADS": 20 },
           ]
     analysis:
       metrics:

@@ -1,0 +1,124 @@
+===== CONFIGURATION =====
+=== MODULE LOADS ===
+Loading cs402-mpi
+  Loading requirement: gcc9
+=== ENVIRONMENT VARIABLES ===
+OMP_NUM_THREADS=20
+RAYON_NUM_THREADS=20
+=== CPU ARCHITECTURE ===
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              40
+On-line CPU(s) list: 0-39
+Thread(s) per core:  2
+Core(s) per socket:  10
+Socket(s):           2
+NUMA node(s):        2
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               63
+Model name:          Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+Stepping:            2
+CPU MHz:             3300.000
+CPU max MHz:         3300.0000
+CPU min MHz:         1200.0000
+BogoMIPS:            5200.01
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            25600K
+NUMA node0 CPU(s):   0-9,20-29
+NUMA node1 CPU(s):   10-19,30-39
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti intel_ppin ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm xsaveopt cqm_llc cqm_occup_llc dtherm ida arat pln pts md_clear flush_l1d
+=== SLURM CONFIG ===
+JobId=931029 JobName=rust-hybridhzcdgb5e.sbatch
+   UserId=u2006527(38259) GroupId=dcsugrad(301) MCS_label=N/A
+   Priority=4294674777 Nice=0 Account=ug QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:01 TimeLimit=2-00:00:00 TimeMin=N/A
+   SubmitTime=2024-04-25T11:16:16 EligibleTime=2024-04-25T11:39:38
+   AccrueTime=2024-04-25T11:39:38
+   StartTime=2024-04-25T11:40:34 EndTime=2024-04-27T11:40:34 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-04-25T11:40:34
+   Partition=cpu-batch AllocNode:Sid=kudu:1648311
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=emu-[01,10]
+   BatchHost=emu-01
+   NumNodes=2 NumCPUs=80 NumTasks=4 CPUs/Task=20 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=80,mem=120000M,node=2,billing=80
+   Socks/Node=* NtasksPerN:B:S:C=2:0:*:* CoreSpec=*
+   MinCPUsNode=40 MinMemoryNode=60000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=MCS Contiguous=0 Licenses=(null) Network=(null)
+   Command=/dcs/20/u2006527/Desktop/project/hpc-multibench/rust-hybridhzcdgb5e.sbatch
+   WorkDir=/dcs/20/u2006527/Desktop/project/hpc-multibench
+   StdErr=/dcs/20/u2006527/Desktop/project/hpc-multibench/results/hybrid/rust-hybrid__931029.out
+   StdIn=/dev/null
+   StdOut=/dcs/20/u2006527/Desktop/project/hpc-multibench/results/hybrid/rust-hybrid__931029.out
+   Power=
+   NtasksPerTRES:0
+
+=== RUN INSTANTIATION ===
+{args: 50 50 50, sbatch_config: {nodes: 2, ntasks-per-node: 2, cpus-per-task: 20}, environment_variables: {OMP_NUM_THREADS: 20, RAYON_NUM_THREADS: 20}}
+
+===== BUILD =====
+run configuration was pre-built
+
+===== RUN =====
+Initial Residual = +2.24117e3
+Iteration = 15 , Residual = +2.65640e1
+Iteration = 30 , Residual = +9.29331e-2
+Iteration = 45 , Residual = +5.32459e-4
+Iteration = 60 , Residual = +2.59944e-6
+Iteration = 75 , Residual = +1.67278e-8
+Iteration = 90 , Residual = +8.30151e-11
+Iteration = 105 , Residual = +3.24676e-13
+Iteration = 120 , Residual = +9.69883e-16
+Iteration = 135 , Residual = +2.90835e-18
+Iteration = 149 , Residual = +1.21620e-20
+Mini-Application Name: hpccg
+Mini-Application Version: 1.0
+Parallelism:
+  Number of MPI ranks: 4
+  Rayon disabled
+Dimensions:
+  nx: 50
+  ny: 50
+  nz: 50
+Number of iterations: 149
+Final residual: 1.21620e-20
+#********** Performance Summary (times in sec) ***********
+Time Summary:
+  Total: 8.4051
+  DDOT: 4.0722
+  WAXPBY: 2.7511
+  SPARSEMV: 1.2696
+FLOPS Summary:
+  Total: 4768000000
+  DDOT: 298000000
+  WAXPBY: 447000000
+  SPARSEMV: 4023000000
+MFLOPS Summary:
+  Total: 567.2758
+  DDOT: 73.1797
+  WAXPBY: 162.4816
+  SPARSEMV: 3168.6942
+DDOT Timing Variations:
+  Min DDOT MPI_Allreduce time: 1.7647
+  Max DDOT MPI_Allreduce time: 2.3769
+  Avg DDOT MPI_Allreduce time: 8.2638
+SPARSEMV OVERHEADS:
+  SPARSEMV MFLOPS W OVERHEAD: 415.9553
+  SPARSEMV PARALLEL OVERHEAD Time: 8.4021
+  SPARSEMV PARALLEL OVERHEAD Pct: 86.8730
+  SPARSEMV PARALLEL OVERHEAD Setup Time: 0.0199
+  SPARSEMV PARALLEL OVERHEAD Setup Pct: 0.2054
+  SPARSEMV PARALLEL OVERHEAD Bdry Exch Time: 8.3822
+  SPARSEMV PARALLEL OVERHEAD Bdry Exch Pct: 86.6676
+Difference between computed and exact = 3.88578e-15.
+real 8.87
+user 16.55
+sys 12.12
